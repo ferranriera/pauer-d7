@@ -10,9 +10,9 @@
 function sitewide_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-basic_page-field_body'
-  $field_instances['node-basic_page-field_body'] = array(
-    'bundle' => 'basic_page',
+  // Exported field_instance: 'node-system_pages-field_sp_body'
+  $field_instances['node-system_pages-field_sp_body'] = array(
+    'bundle' => 'system_pages',
     'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
@@ -22,7 +22,7 @@ function sitewide_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 0,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -31,9 +31,8 @@ function sitewide_field_default_field_instances() {
         'weight' => 0,
       ),
     ),
-    'ds_extras_field_template' => '',
     'entity_type' => 'node',
-    'field_name' => 'field_body',
+    'field_name' => 'field_sp_body',
     'label' => 'Body',
     'placeholder' => '',
     'required' => 0,
@@ -48,7 +47,7 @@ function sitewide_field_default_field_instances() {
         'default_order_wrapper' => array(
           'formats' => array(
             'full_html' => array(
-              'weight' => 0,
+              'weight' => 1,
             ),
             'plain_text' => array(
               'weight' => 10,
@@ -57,7 +56,7 @@ function sitewide_field_default_field_instances() {
         ),
       ),
       'entity_translation_sync' => FALSE,
-      'text_processing' => 1,
+      'text_processing' => 0,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -71,9 +70,53 @@ function sitewide_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-system_pages-title_field'
+  $field_instances['node-system_pages-title_field'] = array(
+    'bundle' => 'system_pages',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'title_field',
+    'label' => 'Title',
+    'required' => TRUE,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'hide_label' => array(
+        'entity' => FALSE,
+        'page' => FALSE,
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => -5,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Body');
+  t('Title');
 
   return $field_instances;
 }

@@ -10,13 +10,13 @@
 function sitewide_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_body'
-  $field_bases['field_body'] = array(
+  // Exported field_base: 'field_sp_body'
+  $field_bases['field_sp_body'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_body',
+    'field_name' => 'field_sp_body',
     'field_permissions' => array(
       'type' => 0,
     ),
@@ -37,9 +37,8 @@ function sitewide_field_default_field_bases() {
     'module' => 'text',
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'profile2_private' => FALSE,
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'text_long',
   );
 
@@ -50,9 +49,6 @@ function sitewide_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'title_field',
-    'field_permissions' => array(
-      'type' => 2,
-    ),
     'foreign keys' => array(
       'format' => array(
         'columns' => array(
@@ -71,9 +67,8 @@ function sitewide_field_default_field_bases() {
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'max_length' => 255,
-      'profile2_private' => FALSE,
     ),
-    'translatable' => 0,
+    'translatable' => 1,
     'type' => 'text',
   );
 

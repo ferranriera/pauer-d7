@@ -52,8 +52,8 @@ function sitewide_views_api($module = NULL, $api = NULL) {
  */
 function sitewide_node_info() {
   $items = array(
-    'basic_page' => array(
-      'name' => t('Basic Page'),
+    'system_pages' => array(
+      'name' => t('System Pages'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
@@ -61,5 +61,6 @@ function sitewide_node_info() {
       'help' => '',
     ),
   );
+  drupal_alter('node_info', $items);
   return $items;
 }

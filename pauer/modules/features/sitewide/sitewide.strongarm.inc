@@ -110,7 +110,7 @@ function sitewide_strongarm() {
     'formula' => '',
     'domain' => '',
     'prefix' => 'gen',
-    'weight' => -8,
+    'weight' => 0,
     'javascript' => '',
   );
   $export['language_default'] = $strongarm;
