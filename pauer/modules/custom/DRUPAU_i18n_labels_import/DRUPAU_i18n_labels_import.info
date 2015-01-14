@@ -1,0 +1,9 @@
+; $Id$
+name = DRUPAU i18n Labels import
+description = This module adds functionality to import translations files as CSV files.
+core = 7.x
+version = "7.x-1.1"
+dependencies[] = locale
+package = Multilanguage
+
+stylesheets[all][] = DRUPAU_i18n_labels_import.css

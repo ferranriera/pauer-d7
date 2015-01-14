@@ -1,0 +1,8 @@
+; $Id: DRUPAU_i18n.info
+name = DRUPAU I18N
+description = Functions to improving internalization of Drupal.
+package = Multilanguage
+core = 7.x
+version = 7.x
+dependencies[] = locale
+dependencies[] = i18n

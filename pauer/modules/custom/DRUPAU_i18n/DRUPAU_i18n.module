@@ -1,0 +1,581 @@
+<?php
+
+// Some constants. Language support modes for content
+define('LANGUAGE_SUPPORT_NONE', 0);
+define('LANGUAGE_SUPPORT_NORMAL', 1);
+define('LANGUAGE_SUPPORT_EXTENDED', 2);
+define('LANGUAGE_SUPPORT_EXTENDED_NOT_DISPLAYED', 3);
+
+/**
+ * Actives languages for the web
+ */
+define('DRUPAU_I18N_ACTIVE_LANGUAGES', 'active_languages');
+
+/**
+ * User profile language content type
+ */
+define('DRUPAU_I18N_PROFILE_TYPE', 'profile');
+
+/**
+ * User profile language field
+ */
+define('DRUPAU_I18N_PROFILE_FIELD', 'field_profile_site_lang');
+
+/**
+ * User profile language taxonomy vid
+ */
+define('DRUPAU_I18N_PROFILE_VID', 25);
+
+/**
+ * Implementation of hook_init().
+ *
+ * Load default language from user's profile content type
+ */
+function DRUPAU_i18n_init() {
+	global $language;
+	global $user;
+  global $base_url;
+  //drupal_goto("products", array('fragment' => $node->nid));
+  if ($language->language=='gen' && ($user->uid!=1) && current_path()=="home"){
+    if (php_sapi_name() != 'cli') { //Not apply to drush
+      drupal_goto($base_url."/en"); //False default language
+    }
+  }
+
+
+	$translations_checker=DRUPAU_i18n_is_translations_checker($user->uid);
+	if (isset($_POST['myLang'])) {
+		DRUPAU_i18n_set_lang($_POST['myLang']);
+		$_SESSION['myLang'] = $_POST['myLang'];
+		drupal_goto($_GET['q']);
+	}
+	else {
+		if(($user->uid!=0)&&($language->language=='drupal')){
+			DRUPAU_i18n_set_lang(DRUPAU_i18n_get_profile_lang());
+		}
+		//DRUPAU_i18n_set_lang(DRUPAU_i18n_get_current_lang());
+	}
+
+	if((in_array($language->language,variable_get('DRUPAU_I18N_ACTIVE_LANGUAGES',array('en'))))||($user->uid==1)||($translations_checker==1)){
+		DRUPAU_i18n_set_lang($language->language);
+	}else {
+
+		//DRUPAU_i18n_set_lang('en');
+	}
+}
+
+
+/**
+ * Implementation of hook_user().
+ */
+function DRUPAU_i18n_user($op, &$edit, &$account, $category = NULL) {
+  // hook_user: http://api.drupal.org/api/function/hook_user/6
+  switch ($op) {
+    case 'login':
+		//$node = content_profile_load(profile, $account->uid);
+		if($account->language){
+			DRUPAU_i18n_set_lang($account->language);
+		}
+	break;
+  }
+}
+
+/**
+ * Implementation of hook_nodeapi().
+ */
+function DRUPAU_i18n_nodeapi(&$node, $op, $a3 = NULL, $a4 = NULL){ //Ponemos en el campo $user->language de drupal el valor de $node->field_profile_site_lang
+	switch ($op){
+		case 'update':
+			if($node->type=='profile'){
+				$account=user_load(array('uid' => $node->uid));
+				$datos=array('language'=> $node->field_profile_site_lang[0]['value']);
+				user_save($account,$datos);
+			}
+		break;
+	}
+}
+
+/**
+ * Implementation of hook_form_alter().
+ */
+function DRUPAU_i18n_form_alter(&$form, &$form_state, $form_id){ //ocultamos el campo $user->language de drupal
+	global $user;
+
+	switch($form_id){
+		case 'user_profile_form':
+			if($user->uid!=1){
+				$form["locale"]['#access']=false;
+			}
+		  break;
+		case 'i18n_string_locale_translate_edit_form':
+		  _DRUPAU_i18n_string_locale_translate_edit_form($form, $form_state, $form_id);
+		  break;
+	}
+}
+
+/**
+ * Implementation of hook_translated_menu_link_alter().
+ * this allows us to translate menus with translated nodes, changing to each node every time
+ */
+function DRUPAU_i18n_translated_menu_link_alter(&$item, $map) {
+	global $user;
+	global $language;
+	//dpm ($item);
+
+		//dpm ($item);
+		
+		$item['link_title'] = t($item['link_title']);
+		$item['title'] = _i18n_menu_link_title($item);
+		$item['localized_options']['attributes']['title'] = _i18n_menu_link_description($item);
+		if ($item['router_path'] == 'node/%') {
+	        $nid = substr($item['link_path'], 5);
+	        if (is_numeric($nid)) {
+		        //$translations = translation_node_get_translations($nid);
+		        //dpm ($translations);
+		        if (isset($translations[$language->language]->nid)){
+			        $item['href'] = $item['link_path']= 'node/'. $translations[$language->language]->nid;
+		        }
+		          
+		        
+	        }
+	    
+}
+    //dpm($item);
+  /*$item['link_title'] = t($item['link_title']);
+    
+  if ($item['module'] == 'menu'||$item['module'] == 'system') {
+
+    
+	if ($item['router_path'] == 'node/%') {
+      $nid = substr($item['link_path'], 5);
+      if (is_numeric($nid)) {
+        $translations = translation_node_get_translations($nid);
+        if ($translation= $translations[i18n_get_lang()]) {
+          $item['href'] = $item['link_path'] = 'node/'. $translation->nid;
+          if ($map[0] == 'node') {
+            $map[1] = node_load($translation->nid);
+          }
+          _menu_check_access($item, $map);
+        }else{
+		  $item['href'] = $item['link_path'] = 'node/'. $nid;
+          if ($map[0] == 'node') {
+            $map[1] = node_load($nid);
+          }
+          _menu_check_access($item, $map);
+		}
+      }
+    }
+  }*/
+}
+
+
+/**
+ * Get global user language from profile
+ * @param object $account [optional] User object
+ * @return Language object
+ */
+function DRUPAU_i18n_get_profile_lang($account = NULL) {
+	if (is_null($account)) {
+		global $user;
+		$account = $user;
+	}
+
+	if (! $account->uid) {
+		$lang = language_from_browser()->language;
+		if (! $lang) {
+			$lang = language_default()->language;
+		}
+		return $lang;
+	}
+
+	//$account = content_profile_load(DRUPAU_I18N_PROFILE_TYPE, $account->uid);
+	//$profile_field = DRUPAU_I18N_PROFILE_FIELD;
+
+	$languages = DRUPAU_i18n_lang_list();
+
+	if (! isset($account->language)) {
+		$lang = FALSE;
+	}
+	else {
+    	$lang = $account->language;
+	}
+
+	if (! $lang) {
+		if ($user->uid == $account->uid) {
+			$lang = language_from_browser()->language;
+		}
+
+		if (! $lang || ! isset($languages[$lang])) {
+			$lang = language_default()->language;
+		}
+	}
+
+	return $lang;
+}
+
+/**
+ * Get current session user language
+ * @param object $account [optional] User object
+ * @return
+ */
+function DRUPAU_i18n_get_current_lang($account = NULL) {
+	global $language;
+	global $user;
+	$translations_checker=DRUPAU_i18n_is_translations_checker($user->uid);
+	if((in_array($language->language,variable_get('DRUPAU_I18N_ACTIVE_LANGUAGES',array('en'))))||($user->uid==1)||($translations_checker==1)){
+		return($language->language);
+	}else {
+		return('en');
+	}
+	/*if (isset($_SESSION['myLang'])) {
+		return $_SESSION['myLang'];
+	}
+	else {
+		return DRUPAU_i18n_get_profile_lang($account);
+	}*/
+}
+
+/**
+ * Get list of languages
+ * @param boolean $enabled [optional] TRUE if to return only enabled languages
+ * @return List of languages as an array
+ */
+function DRUPAU_i18n_lang_list($enabled = TRUE) {
+	if ($enabled) {
+		$languages = language_list('enabled');
+		return $languages[1];
+	}
+	else {
+		return language_list();
+	}
+}
+
+/**
+ * Set global user language
+ * @param string $lang [optional] Language code
+ */
+function DRUPAU_i18n_set_lang($lang = 'en') {
+	global $language;
+
+	$languages = DRUPAU_i18n_lang_list();
+
+	if (! isset($languages[$lang])) {
+		$lang = 'en';
+	}
+
+	$language = $languages[$lang];
+}
+
+/**
+ * Check if the current user has the translations_checker role
+ */
+function DRUPAU_i18n_is_translations_checker($uid) {
+	$rid = db_query("SELECT rid FROM role where name='translations_checker'")->fetchField();
+	$translations_checker = db_query("SELECT count(*) FROM users_roles where uid=:uid and rid=:rid",array(':uid' =>$uid,':rid'=>$rid))->fetchField();
+	return($translations_checker);
+}
+
+/**
+ * Return select language form array
+ * @return Form array
+ */
+function DRUPAU_i18n_lang_select_form() {
+  $form = array(
+   'myLang' => array(
+     '#type' => 'select',
+     '#title' => '',
+     '#default_value' => DRUPAU_i18n_get_current_lang(),
+    )
+  );
+
+  $form['myLang']['#attributes'] = array(/*'disabled='=>'disabled',*/'onchange' => 'form.submit("myLang")');
+  $languages = DRUPAU_i18n_lang_list();
+
+  global $user;
+  $translations_checker=DRUPAU_i18n_is_translations_checker($user->uid);
+  if (($user->uid!=1)&&($translations_checker==0)){
+	foreach($languages as $key=>$language){
+		if(!in_array($key, variable_get('DRUPAU_I18N_ACTIVE_LANGUAGES',array('en')))) {
+			unset($languages[$key]);
+		}
+	}
+  }
+
+  foreach($languages as $lang) {
+    $form['myLang']['#options'][$lang->language] = $lang->native . " (" . $lang->language . ")";
+  }
+
+  // Sort languages by native name
+  ksort($form['myLang']['#options']);
+
+	return $form;
+}
+
+/*
+ * Theme function to return dropdown html //GOOD SELECTOR!!!!
+ */
+function DRUPAU_i18n_lang_dropdown() {
+  /* This code is almost from locale.module with a bit of modifications
+   * Instead of themeing it using theme('links') we'll theme our own dropdown
+   */
+  global $language;
+  $path = drupal_is_front_page() ? '<front>' : $_GET['q'];
+  $languages = language_list('enabled');
+  $options1 = array();
+  foreach ($languages[1] as $lang_item) {
+    $options1[$lang_item->language] = array(
+      'href'       => $path,
+      'title'      => $lang_item->native,
+      'language'   => $lang_item,
+    );
+  }
+
+  drupal_alter('DRUPAU_translation_link', $options1, $path);
+  global $user;
+  $translations_checker=DRUPAU_i18n_is_translations_checker($user->uid);
+  if (($user->uid!=1)&&($translations_checker==0)){
+	foreach($options1 as $key => $value){
+		if(in_array($key, variable_get('DRUPAU_I18N_ACTIVE_LANGUAGES',array('en')))) {
+			$options[$key]=$options1[$key];
+		}
+	}
+  }else{
+	$options=$options1;
+  }
+
+  /* Here we theme our own dropdown */
+  $output = "<select id=\"edit-myLang\" name=\"myLang\" onchange=\"document.location.href=this.options[this.selectedIndex].value;\">\n";
+  foreach ($options as $lang_option) {
+    if ($language->language == $lang_option['language']->language) {
+      $selected = ' selected="selected"';
+      /* Here we output the language flag  from language icons module */
+      //if (module_exists('languageicons')) { $languageicon = theme('languageicons_icon', $lang_option['language']); }
+    } else { $selected = ''; }
+    $path = check_url(url($lang_option['href'], array('language' => $lang_option['language'])));
+    $output .= '<option value="' . $path . '"' . $selected . '>' . $lang_option['title'].' ('.$lang_option['language']->language . ')</option>' . "\n";
+  }
+  $output .= "</select>\n"; // . $languageicon;
+  return $output;
+}
+/**
+ * Implementation of hook_translation_link_alter()
+ */
+function DRUPAU_i18n_DRUPAU_translation_link_alter(&$links, $path) {
+  if ($paths = translation_path_get_translations($path)) {
+    foreach ($links as $langcode => $link) {
+      if (isset($paths[$langcode])) {
+        // Translation in a different node.
+        $links[$langcode]['href'] = $paths[$langcode];
+      }
+    }
+  }
+   // Check for a node related path, and for its translations.
+  if ((preg_match("!^node/([0-9]+)(/.+|)$!", $path, $matches)) && ($node = node_load((int)$matches[1])) && !empty($node->tnid)) {
+    // make sure language support is set to LANUAGE_SUPPORT_EXTENDED, so links
+    // dont get added for LANGUAGE_SUPPORT_EXTENDED_NOT_DISPLAYED
+    if (variable_get('i18n_node_'. $node->type, LANGUAGE_SUPPORT_NORMAL) == LANGUAGE_SUPPORT_EXTENDED) {
+      $languages = language_list();
+      $extended = array();
+      foreach (translation_node_get_translations($node->tnid) as $langcode => $translation_node) {
+        if (!isset($links[$langcode]) && isset($languages[$langcode])) {
+          $extended[$langcode] = array(
+            'href' => 'node/'. $translation_node->nid . $matches[2],
+            'language' => $language,
+            'language_icon' => $languages[$langcode],
+            'title' => $languages[$langcode]->native,
+            'attributes' => array('class' => 'language-link'),
+          );
+        }
+      }
+      // This will run after languageicon module, so we add icon in case that one is enabled.
+      if ($extended && function_exists('languageicons_translation_link_alter')) {
+        languageicons_translation_link_alter($extended, $path);
+      }
+      $links = array_merge($links, $extended);
+    }
+  }
+  if (preg_match("/^(taxonomy\/term\/)([^\/]*)(.*)$/", $path, $matches)) { //or at a taxonomy-listing?
+    foreach ($links as $langcode => $link) {
+      if ($str_tids = i18ntaxonomy_translation_tids($matches[2], $langcode)) {
+        $links[$langcode]['href'] = "taxonomy/term/$str_tids". $matches[3];
+      }
+    }
+  }
+}
+
+/**
+ * Implementation of hook_menu().
+ */
+function DRUPAU_i18n_menu() {
+	$items = array();
+
+  $items['admin/settings/language/DRUPAU_i18n_active_languages'] = array(
+    'title' => 'Active Languages',
+    'description' => 'Readjust the available languages that users can see.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('DRUPAU_i18n_active_languages_form'),
+    'access arguments' => array('administer site configuration'),
+    'type' => MENU_LOCAL_TASK,
+    'weight' => 20,
+  );
+
+	return $items;
+}
+
+/**
+ * Form to set active languages.
+ */
+function DRUPAU_i18n_active_languages_form() {
+	drupal_add_js('misc/collapse.js');
+
+	$langs_op = array();
+	$langs = DRUPAU_i18n_lang_list();
+	foreach($langs as $lang) {
+		$langs_op[$lang->language] = $lang->name;
+	}
+	ksort($langs_op);
+
+	$form = array(
+    'active_lang' => array(
+      '#type' => 'select',
+      '#multiple' => TRUE,
+			'#default_value' => variable_get('DRUPAU_I18N_ACTIVE_LANGUAGES',$langs_op),
+      '#title' => t('Active languages'),
+      '#options' => $langs_op,
+      '#required' => TRUE,
+    ),
+		'submit' => array(
+		  '#type' => 'submit',
+			'#value' => t('Update'),
+		),
+	);
+
+	return $form;
+}
+
+/**
+ * Implementation of hook_submit().
+ */
+function DRUPAU_i18n_active_languages_form_submit($form, &$form_state) {
+	$active_lang = $form_state['values']['active_lang'];
+	variable_set('DRUPAU_I18N_ACTIVE_LANGUAGES', $active_lang);
+}
+
+
+
+/**
+ * Overwrite form i18n_string::i18n_string_locale_translate_edit_form.
+ *
+ * Basically establish the default language "GEN" when prepare list of translation for each language
+ *
+ * See i18n_string::i18n_string_locale_translate_edit_form for more details
+ */
+function _DRUPAU_i18n_string_locale_translate_edit_form(&$form, &$form_state, $form_id) {
+
+  //Recover ID of label from URL
+  $lid = arg(5);
+  // Fetch source string, if possible.
+  $r = sprintf('SELECT source, context, textgroup, location FROM {locales_source} WHERE lid = :lid', array(':lid' => $lid));
+  $source = db_query('SELECT source, context, textgroup, location FROM {locales_source} WHERE lid = :lid', array(':lid' => $lid))->fetchObject();
+  if (!$source) {
+    drupal_set_message(t('String not found.'), 'error');
+    drupal_goto('admin/config/regional/translate/translate');
+  }
+
+  // Add original text to the top and some values for form altering.
+  $form['original'] = array(
+    '#type'  => 'item',
+    '#title' => t('Original text'),
+    '#markup' => check_plain(wordwrap($source->source, 0)),
+  );
+  if (!empty($source->context)) {
+    $form['context'] = array(
+      '#type' => 'item',
+      '#title' => t('Context'),
+      '#markup' => check_plain($source->context),
+    );
+  }
+  $form['lid'] = array(
+    '#type'  => 'value',
+    '#value' => $lid
+  );
+  $form['textgroup'] = array(
+    '#type'  => 'value',
+    '#value' => $source->textgroup,
+  );
+  $form['location'] = array(
+    '#type'  => 'value',
+    '#value' => $source->location
+  );
+
+  // Include default form controls with empty values for all languages.
+  // This ensures that the languages are always in the same order in forms.
+  $languages = language_list();
+
+  // We don't need the default language value, that value is in $source.
+  $omit = $source->textgroup == 'default' ? 'GEN' : i18n_string_source_language();
+  unset($languages[($omit)]);
+  $form['translations'] = array('#tree' => TRUE);
+  // Approximate the number of rows to use in the default textarea.
+  $rows = min(ceil(str_word_count($source->source) / 12), 10);
+  foreach ($languages as $langcode => $language) {
+    $form['translations'][$langcode] = array(
+      '#type' => 'textarea',
+      '#title' => t($language->name),
+      '#rows' => $rows,
+      '#default_value' => '',
+    );
+  }
+
+  // Fetch translations and fill in default values in the form.
+  $result = db_query("SELECT DISTINCT translation, language FROM {locales_target} WHERE lid = :lid AND language <> :omit", array(':lid' => $lid, ':omit' => $omit));
+  foreach ($result as $translation) {
+    $form['translations'][$translation->language]['#default_value'] = $translation->translation;
+  }
+
+  $form['actions'] = array('#type' => 'actions');
+  $form['actions']['submit'] = array('#type' => 'submit', '#value' => t('Save translations'));
+
+  // Restrict filter permissions and handle validation and submission for i18n strings.
+  if (i18n_string_group_info($source->textgroup)) {
+    if ($i18nstring = i18n_string_get_by_lid($form['lid']['#value'])) {
+      $form['i18n_string'] = array('#type' => 'value', '#value' => $i18nstring);
+      if ($message = $i18nstring->check_translate_access()) {
+        drupal_set_message($message);
+        $disabled = TRUE;
+      }
+      // Add format help anyway, though the form may be disabled.
+      $form['translations']['format_help']['#markup'] = _i18n_string_translate_format_help($i18nstring->format);
+    }
+    else {
+      drupal_set_message(t('Source string not found.'), 'warning');
+      $disabled = TRUE;
+    }
+    if (!empty($disabled)) {
+      // Disable all form elements
+      $form['submit']['#disabled'] = TRUE;
+      foreach (element_children($form['translations']) as $langcode) {
+        $form['translations'][$langcode]['#disabled'] = TRUE;
+      }
+    }
+  }
+
+  return $form;
+}
+
+function DRUPAU_i18n_ctools_render_alter(&$info, &$page, &$context) {
+    $handler = $context['handler'];
+    if (isset($handler->handler) && ($handler->handler == 'panel_context')) {
+        $display = $handler->conf['display'];
+        if (($display->hide_title == PANELS_TITLE_FIXED) && (!empty($info['title']))) {
+            $info['title'] = t($info['title']);
+        }
+    }
+ }
+
+ /**
+ * hook_preprocess_panels_pane
+ */
+function DRUPAU_i18n_preprocess_panels_pane(&$vars) {
+    $vars['title'] = t($vars['title']);
+}

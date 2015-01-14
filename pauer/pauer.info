@@ -1,0 +1,37 @@
+name = Pauer Profile
+description = Pauer profile
+version = VERSION
+core = 7.x
+
+dependencies[] = admin_menu
+dependencies[] = block
+dependencies[] = ctools
+dependencies[] = rdf
+dependencies[] = diff
+dependencies[] = entity
+dependencies[] = entityreference
+dependencies[] = features
+dependencies[] = field_ui
+dependencies[] = list
+dependencies[] = taxonomy
+dependencies[] = module_filter
+dependencies[] = comment
+dependencies[] = page_manager
+dependencies[] = image
+dependencies[] = panels
+dependencies[] = strongarm
+dependencies[] = sitewide
+dependencies[] = text
+dependencies[] = views
+dependencies[] = views_bulk_operations
+dependencies[] = views_content
+dependencies[] = views_ui
+
+; System Requirements.
+php_memory_limit = 128M
+
+; Information added by drupal.org packaging script on 2013-02-22
+version = "7.x-0.9"
+core = "7.x"
+project = "Pauer"
+datestamp = "1361546441"
