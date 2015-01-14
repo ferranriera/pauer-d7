@@ -26,6 +26,8 @@ dependencies[] = views
 dependencies[] = views_bulk_operations
 dependencies[] = views_content
 dependencies[] = views_ui
+dependencies[] = locale
+dependencies[] = i18n
 
 ; System Requirements.
 php_memory_limit = 128M

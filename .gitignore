@@ -1,0 +1,18 @@
+# Document root #
+#################
+docroot
+# OS generated files #
+######################
+.DS_Store*
+pauer/config/install/core.extension.yml
+ehthumbs.db
+Icon\?
+Thumbs.db
+._*
+*~
+*.kpf
+*.swp
+*.swo
+# Development #
+###############
+.idea

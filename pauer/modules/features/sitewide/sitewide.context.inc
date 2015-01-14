@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * sanco_sitewide.context.inc
+ * sitewide.context.inc
  */
 
 /**
@@ -23,5 +23,38 @@ function sitewide_context_default_contexts() {
       ),
     ),
   );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'panels_mini-header' => array(
+          'module' => 'panels_mini',
+          'delta' => 'header',
+          'region' => 'navigation',
+          'weight' => '-10',
+        ),
+        'panels_mini-header_responsive' => array(
+          'module' => 'panels_mini',
+          'delta' => 'header_responsive',
+          'region' => 'navigation',
+          'weight' => '-9',
+        ),
+        'panels_mini-service_links_and_language_switc' => array(
+          'module' => 'panels_mini',
+          'delta' => 'service_links_and_language_switc',
+          'region' => 'header',
+          'weight' => '-10',
+        ),
+        'panels_mini-footer' => array(
+          'module' => 'panels_mini',
+          'delta' => 'footer',
+          'region' => 'footer',
+          'weight' => '-10',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+  $export['sitewide'] = $context;
+
   return $export;
 }

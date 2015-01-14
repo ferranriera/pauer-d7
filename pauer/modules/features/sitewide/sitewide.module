@@ -4,4 +4,4 @@
  * Code for the Sanco sitewide feature.
  */
 
-include_once 'sanco_sitewide.features.inc';
+include_once 'sitewide.features.inc';

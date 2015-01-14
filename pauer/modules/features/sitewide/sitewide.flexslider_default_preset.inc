@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * sanco_sitewide.flexslider_default_preset.inc
+ * sitewide.flexslider_default_preset.inc
  */
 
 /**
