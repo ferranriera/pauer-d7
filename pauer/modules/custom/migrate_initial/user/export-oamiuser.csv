@@ -1,0 +1,10 @@
+uid,name,pass,status,mail,role_names,field_oami_user_name,field_oami_user_surname
+2,user1,Ridico,1,bansa@ss.es,Team,Peter,Andres
+3,user2,Racone,1,bradfor@bradford.com,Team,Mads,Mikkelsen
+4,user3,Renipa,1,cluj@cluj.com,Team,Travis,Fimmel
+5,user4,Radica,1,deventer@deventer.com,Team,Jon,Hamm
+6,user5,Rokoun,1,granollers@granollers.com,Team,Ferran,Riera
+7,user6,Rasnic,1,poznan@poznan.es,Team,Ivan,Aldavert
+8,user7,Recora,1,roncq@roncq.es,Team,Javier,Drupalero
+9,Jacint_Verdaguer,1234,1,jacint@verdaguer.com,Editorial Team,Jacint,Verdaguer
+10,Joana_Ortega,1234,1,joana@oami.com,Voting Controller,Joana Ortega
