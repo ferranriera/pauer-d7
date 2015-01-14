@@ -446,14 +446,14 @@ class OamiPageMigration extends Migration {
     $module_path = drupal_get_path('module', 'migrate_initial');
     $csv_path = $module_path . '/node/export-page.csv';
     $this->source = new MigrateSourceCSV($csv_path, array(), array('embedded_newlines' => TRUE, 'header_rows' => 1));
-    $this->destination = new MigrateDestinationNode('basic_page');
+    $this->destination = new MigrateDestinationNode('system_pages');
     //Fields   
     $this->addFieldMapping('nid', 'Nid');
     //$this->addFieldMapping('vid', 'Nid');
     $this->addFieldMapping('title', 'Title');
-    $this->addFieldMapping('field_body', 'field_body');
-    $this->addFieldMapping('field_body:format')
-     ->defaultValue('full_html');
+    $this->addFieldMapping('field_sp_body', 'field_body');
+    /*$this->addFieldMapping('field_body:format')
+     ->defaultValue('full_html');*/
     $this->addFieldMapping('language', 'language');
     $this->addFieldMapping('path', 'path');
     $this->addFieldMapping('pathauto', 'pathauto');

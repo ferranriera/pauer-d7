@@ -18,7 +18,7 @@ function migrate_initial_migrate_api() {
   $api = array(
     'api' => 2,
     'migrations' => array(
-      'OamiIdeas' => array('class_name' => 'OamiIdeasTermsMigration'),
+      /*'OamiIdeas' => array('class_name' => 'OamiIdeasTermsMigration'),
       'OamiTerms' => array('class_name' => 'OamiGenderTermsMigration'),
       'OamiIntellectual' => array('class_name' => 'OamiIntellectualTermsMigration'),
       'OamiBlog' => array('class_name' => 'OamiBlogMigration'),
@@ -29,10 +29,10 @@ function migrate_initial_migrate_api() {
       'OamiSupporters' => array('class_name' => 'OamiSupportersMigration'),
       'OamiIntellectualContent' => array('class_name' => 'OamiIntellectualMigration'),
       'OamiUser' => array('class_name' => 'OamiUserMigration'),
-      'OamiProfile' => array('class_name' => 'OamiUserProfileMigration'),
+      'OamiProfile' => array('class_name' => 'OamiUserProfileMigration'),*/
       'OamiPage' => array('class_name' => 'OamiPageMigration'),
-      'OamiIpCampaigns' => array('class_name' => 'OamiIpCampaignsMigration'),
-      'OamiCompetition' => array('class_name' => 'OamiCompetitionMigration'),
+      /*'OamiIpCampaigns' => array('class_name' => 'OamiIpCampaignsMigration'),
+      'OamiCompetition' => array('class_name' => 'OamiCompetitionMigration'),*/
     ),
   );
   return $api;

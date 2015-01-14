@@ -432,13 +432,6 @@ projects[pathauto][version] = 1.2
 projects[pathauto][type] = "module"
 projects[pathauto][subdir] = "contrib"
 
-projects[plupload][type] = module
-projects[plupload][download][type] = git
-projects[plupload][download][revision] = 3eb7204
-projects[plupload][download][branch] = 7.x-1.x
-projects[plupload][subdir] = "contrib"
-projects[plupload][patch][1845798] = "https://www.drupal.org/files/issues/2138379-1.patch"
-
 projects[profile2][type] = module
 projects[profile2][download][type] = git
 projects[profile2][download][revision] = 724a5e9
@@ -552,12 +545,6 @@ projects[votingapi][version] = 2.12
 projects[votingapi][type] = "module"
 projects[votingapi][subdir] = "contrib"
 
-projects[vote_up_down][type] = module
-projects[vote_up_down][download][type] = git
-projects[vote_up_down][download][revision] = 4c77c50
-projects[vote_up_down][download][branch] = 7.x-1.x-dev
-projects[vote_up_down][subdir] = "contrib"
-projects[vote_up_down][patch][001]= "https://raw.githubusercontent.com/in2-drupalteam/patch/master/vote_up_down_oami_3.patch"
 
 projects[webform][version] = 4.2
 projects[webform][type] = "module"
@@ -628,22 +615,6 @@ libraries[flexslider][download][type]= "get"
 libraries[flexslider][download][url] = "https://github.com/woothemes/FlexSlider/archive/master.zip"
 libraries[flexslider][directory_name] = "flexslider"
 libraries[flexslider][destination] = "libraries"
-
-libraries[video-js][download][type]= "get"
-libraries[video-js][download][url] = "http://www.videojs.com/downloads/video-js-4.7.3.zip"
-libraries[video-js][directory_name] = "video-js"
-libraries[video-js][destination] = "libraries"
-
-
-libraries[jwplayer][download][type]= "get"
-libraries[jwplayer][download][url] = "https://github.com/jwplayer/jwplayer/archive/master.zip"
-libraries[jwplayer][directory_name] = "jwplayer"
-libraries[jwplayer][destination] = "libraries"
-
-libraries[plupload][download][type]= "get"
-libraries[plupload][download][url] = "https://github.com/moxiecode/plupload/archive/v1.5.8.zip"
-libraries[plupload][directory_name] = "plupload"
-libraries[plupload][destination] = "libraries"
 
 libraries[chosen][download][type]= "get"
 libraries[chosen][download][url] = "https://github.com/harvesthq/chosen/releases/download/v1.2.0/chosen_v1.2.0.zip"
