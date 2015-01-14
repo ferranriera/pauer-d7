@@ -22,7 +22,7 @@
 <li>Clone <code>git clone git@github.com:ferranriera/pauer-d7.git pauer/</code> inside a Virtualhost /Users/your-name/Sites/</li>
 <li>Enter to <code>cd pauer</code>
 </li>
-<li>Execute ./pauer_initial.sh to install with modules ./pauer_test to install if you have the modules already installed.<code></code>
+<li>Execute <code>./pauer_initial.sh</code> to install with modules <code>./pauer_test</code> to install if you have the modules already installed.
 </li>
 </ol>
 </article>
