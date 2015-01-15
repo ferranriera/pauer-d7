@@ -24,13 +24,14 @@ function migrate_initial_migrate_api() {
       'OamiBlog' => array('class_name' => 'OamiBlogMigration'),
       'OamiParticipation' => array('class_name' => 'OamiParticipationMigration'),
       'OamiBlock' => array('class_name' => 'OamiBlockMigration'),
-      'OamiMenus' => array('class_name' => 'OamiMenusMigration'),
+
       'OamiToolkit' => array('class_name' => 'OamiToolkitMigration'),
       'OamiSupporters' => array('class_name' => 'OamiSupportersMigration'),
       'OamiIntellectualContent' => array('class_name' => 'OamiIntellectualMigration'),
       'OamiUser' => array('class_name' => 'OamiUserMigration'),
       'OamiProfile' => array('class_name' => 'OamiUserProfileMigration'),*/
       'OamiPage' => array('class_name' => 'OamiPageMigration'),
+      'OamiMenus' => array('class_name' => 'OamiMenusMigration'),
       /*'OamiIpCampaigns' => array('class_name' => 'OamiIpCampaignsMigration'),
       'OamiCompetition' => array('class_name' => 'OamiCompetitionMigration'),*/
     ),

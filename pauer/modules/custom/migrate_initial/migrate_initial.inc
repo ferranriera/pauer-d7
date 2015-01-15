@@ -222,7 +222,7 @@ class OamiMenusMigration extends Migration {
     );
 
     $module_path = drupal_get_path('module', 'migrate_initial');
-    $csv_path = $module_path . '/menu/oami-export-menu.csv';
+    $csv_path = $module_path . '/menu/export-menu.csv';
     $this->source = new MigrateSourceCSV($csv_path, array(), array('embedded_newlines' => TRUE, 'header_rows' => 1));
 		$this->dependencies = array('OamiPage');	    
 		$this->destination = new MigrateDestinationMenuLinks();
