@@ -1,6 +1,6 @@
 "menu_name","mlid","plid","link_path","router_path","link_title","external","has_children","expanded","weight","depth","customized","p1"
-main-menu,25036,0,/,<front>,oami_home,0,0,0,-1,1,1,0
-"main-menu",25038,0,"node/3104","How to power your ideas","oami_menu_how_to_power_your_ideas",0,0,0,0,1,1,0
-"main-menu",25039,25022,"node/4200","Guide","oami_guide",0,0,0,1,1,1,25022
-"main-menu",25040,25022,"node/4202","Rules","oami_rules",0,0,0,2,1,1,25022
-"main-menu",25041,25022,"node/4201","FAQ","oami_faq",0,0,0,3,1,1,25022
+main-menu,25036,0,node/1,<front>,home,0,0,0,-1,1,1,0
+main-menu,25038,0,node/2,"How to power your ideas",lorem1,0,0,0,0,1,1,0
+main-menu,25039,25022,node/3,Guide,lorem2,0,0,0,1,1,1,25022
+main-menu,25040,25022,node/4,Rules,lorem3,0,0,0,2,1,1,25022
+main-menu,25041,25022,node/5,FAQ,lorem4,0,0,0,3,1,1,25022

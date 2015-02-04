@@ -190,6 +190,7 @@ features[page_manager_pages][] = supporters
 features[page_manager_pages][] = the_team
 features[page_manager_pages][] = toolkit
 features[panelizer_defaults][] = node:system_pages:default:full
+features[panelizer_defaults][] = node:system_pages:home
 features[panelizer_defaults][] = node:system_pages:variant_1
 features[panels_mini][] = footer
 features[panels_mini][] = header

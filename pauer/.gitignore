@@ -3,4 +3,3 @@ modules/*
 !modules/features
 themes/*
 !themes/custom
-libraries/*

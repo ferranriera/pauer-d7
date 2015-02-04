@@ -449,11 +449,10 @@ class OamiPageMigration extends Migration {
     $this->destination = new MigrateDestinationNode('system_pages');
     //Fields   
     $this->addFieldMapping('nid', 'Nid');
-    //$this->addFieldMapping('vid', 'Nid');
     $this->addFieldMapping('title', 'Title');
     $this->addFieldMapping('field_sp_body', 'field_body');
-    /*$this->addFieldMapping('field_body:format')
-     ->defaultValue('full_html');*/
+    $this->addFieldMapping('field_body:format')
+     ->defaultValue('full_html');
     $this->addFieldMapping('language', 'language');
     $this->addFieldMapping('path', 'path');
     $this->addFieldMapping('pathauto', 'pathauto');
@@ -462,6 +461,12 @@ class OamiPageMigration extends Migration {
     $this->addFieldMapping('is_new')
     ->defaultValue('true');
   }
+    public function complete($entity, stdClass $row) {
+        // Clone panelizer settings
+        $node=node_load($entity->nid);
+        $node->panelizer['full']->name=$row->panelizer;
+        node_save($node);
+    }
 }
 
 class OamiIpCampaignsMigration extends Migration {
