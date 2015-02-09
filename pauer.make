@@ -49,6 +49,12 @@ projects[ajax_form_entity][download][revision] = c32f054
 projects[ajax_form_entity][download][branch] = 7.x-1.x-dev
 projects[ajax_form_entity][subdir] = "contrib"
 
+projects[addthis][type] = module
+projects[addthis][download][type] = git
+projects[addthis][download][revision] = d766ed7
+projects[addthis][download][branch] = 7.x-4.x-dev
+projects[addthis][subdir] = "contrib"
+
 projects[backup_migrate][version] = 2.8
 projects[backup_migrate][type] = "module"
 projects[backup_migrate][subdir] = "contrib"
@@ -161,10 +167,6 @@ projects[ds][version] = 2.7
 projects[ds][type] = "module"
 projects[ds][subdir] = "contrib"
 
-projects[double_field][version] = 2.3
-projects[double_field][type] = "module"
-projects[double_field][subdir] = "contrib"
-
 projects[strongarm][version] = 2.0
 projects[strongarm][type] = "module"
 projects[strongarm][subdir] = "contrib"
@@ -203,6 +205,17 @@ projects[eu-cookie-compliance][download][revision] = 0e6a86b
 projects[eu-cookie-compliance][download][branch] = 7.x-2.x
 projects[eu-cookie-compliance][subdir] = "contrib"
 
+projects[epsacrop][type] = module
+projects[epsacrop][download][type] = git
+projects[epsacrop][download][revision] = 8f3a1bb
+projects[epsacrop][download][branch] = 7.x-2.x
+projects[epsacrop][subdir] = "contrib"
+projects[epsacrop][patch][1845798] = "https://www.drupal.org/files/issues/epsacrop-fix_update_hook-1396500-30.patch"
+
+projects[extlink][version] = 1.18
+projects[extlink][type] = "module"
+projects[extlink][subdir] = "contrib"
+
 projects[feeds][type] = module
 projects[feeds][download][type] = git
 projects[feeds][download][revision] = 00a35fe
@@ -231,13 +244,11 @@ projects[field_placeholder][version] = 1.0
 projects[field_placeholder][type] = "module"
 projects[field_placeholder][subdir] = "contrib"
 
-projects[filefield_sources][version] = 1.9
-projects[filefield_sources][type] = "module"
-projects[filefield_sources][subdir] = "contrib"
-
-projects[filefield_sources_plupload][version] = 1.1
-projects[filefield_sources_plupload][type] = "module"
-projects[filefield_sources_plupload][subdir] = "contrib"
+projects[file_entity][type] = module
+projects[file_entity][download][type] = git
+projects[file_entity][download][revision] = b610413
+projects[file_entity][download][branch] = 7.x-2.x
+projects[file_entity][subdir] = "contrib"
 
 projects[field_permissions][type] = module
 projects[field_permissions][download][type] = git
@@ -260,13 +271,18 @@ projects[flexslider][version] = 2.0-alpha3
 projects[flexslider][type] = "module"
 projects[flexslider][subdir] = "contrib"
 
-projects[jquery_update][version] = 2.4
+projects[jquery_update][version] = 2.5
 projects[jquery_update][type] = "module"
 projects[jquery_update][subdir] = "contrib"
 
 projects[flag][version] = 3.5
 projects[flag][type] = "module"
 projects[flag][subdir] = "contrib"
+
+
+projects[flippy][version] = 1.3
+projects[flippy][type] = "module"
+projects[flippy][subdir] = "contrib"
 
 projects[fontyourface][version] = 2.8
 projects[fontyourface][type] = "module"
@@ -369,6 +385,19 @@ projects[menu_block][version] = 2.4
 projects[menu_block][type] = "module"
 projects[menu_block][subdir] = "contrib"
 
+projects[media][type] = module
+projects[media][download][type] = git
+projects[media][download][revision] = 1e1aade
+projects[media][download][branch] = 7.x-2.x
+projects[media][subdir] = "contrib"
+projects[media][patch][2146385] = "https://www.drupal.org/files/issues/media_remove_file_display_alter-2104193-91.patch"
+
+projects[media_youtube][type] = module
+projects[media_youtube][download][type] = git
+projects[media_youtube][download][revision] = 9fd6c94
+projects[media_youtube][download][branch] = 7.x-2.x
+projects[media_youtube][subdir] = "contrib"
+
 projects[menu_breadcrumb][version] = 1.5
 projects[menu_breadcrumb][type] = "module"
 projects[menu_breadcrumb][subdir] = "contrib"
@@ -406,6 +435,7 @@ projects[oauth][subdir] = "contrib"
 projects[panelizer][version] = 3.1
 projects[panelizer][type] = "module"
 projects[panelizer][subdir] = "contrib"
+projects[panelizer][patch][21] = "https://www.drupal.org/files/issues/panelizer-n1841262-10_0.patch"
 
 projects[panels][version] = 3.4
 projects[panels][type] = "module"
@@ -518,11 +548,6 @@ projects[features_extra][download][branch] = 7.x-1.x
 projects[features_extra][subdir] = "contrib"
 projects[features_extra][patch][1279928-49] = "https://www.drupal.org/files/issues/features_extra-add-date-format-support-1279928-49.patch"
 
-
-projects[video_embed_field][version] = 2.0-beta8
-projects[video_embed_field][type] = "module"
-projects[video_embed_field][subdir] = "contrib"
-
 projects[views][version] = 3.8
 projects[views][type] = "module"
 projects[views][subdir] = "contrib"
@@ -537,13 +562,15 @@ projects[views_bootstrap][subdir] = "contrib"
 projects[views_bootstrap][patch][2203111-26] = "http://drupal.org/files/issues/views_bootstrap-thumbails-columns-per-device-size-2203111-26.patch"
 
 
+projects[views_ifempty][type] = module
+projects[views_ifempty][download][type] = git
+projects[views_ifempty][download][revision] = c90939f
+projects[views_ifempty][download][branch] = 7.x-1.x-dev
+projects[views_ifempty][subdir] = "contrib"
+
 projects[views_bulk_operations][version] = 3.2
 projects[views_bulk_operations][type] = "module"
 projects[views_bulk_operations][subdir] = "contrib"
-
-projects[votingapi][version] = 2.12
-projects[votingapi][type] = "module"
-projects[votingapi][subdir] = "contrib"
 
 
 projects[webform][version] = 4.2
@@ -569,6 +596,34 @@ projects[webform_ajax][subdir] = "contrib"
 projects[wysiwyg][version] = 2.2
 projects[wysiwyg][type] = "module"
 projects[wysiwyg][subdir] = "contrib"
+
+
+; Github custom modules
+; ---------
+
+projects[angular_twitter][subdir] = "custom"
+projects[angular_twitter][type] = "module"
+projects[angular_twitter][download][type] = "git"
+projects[angular_twitter][download][revision] = 3a1a5d41d87ed270e40092786348ef841d88116c
+projects[angular_twitter][download][url]="https://github.com/ferranriera/Angular-Twitter-D7.git"
+
+projects[DRUPAU_i18n][subdir] = "custom"
+projects[DRUPAU_i18n][type] = "module"
+projects[DRUPAU_i18n][download][type] = "git"
+projects[DRUPAU_i18n][download][revision] = 7b019c7779416fd541435f0a60a52d0c13f14d72
+projects[DRUPAU_i18n][download][url]="https://github.com/ferranriera/DRUPAU-i18n.git"
+
+projects[DRUPAU_i18n_labels_import][subdir] = "custom"
+projects[DRUPAU_i18n_labels_import][type] = "module"
+projects[DRUPAU_i18n_labels_import][download][type] = "git"
+projects[DRUPAU_i18n_labels_import][download][revision] = 2498748759c70d4cb0b9e056aaf15fa162e4f476
+projects[DRUPAU_i18n_labels_import][download][url]="https://github.com/ferranriera/DRUPAU-i18n-Labels-import.git"
+
+projects[social_media_links][subdir] = "custom"
+projects[social_media_links][type] = "module"
+projects[social_media_links][download][type] = "git"
+projects[social_media_links][download][revision] = 9ba6057b7dda6845c1bd235d9b30f0607f4463c6
+projects[social_media_links][download][url]="https://github.com/ferranriera/Social-media-Links.git"
 
 
 ; Themes
@@ -601,11 +656,6 @@ libraries[colorbox][download][url] = "https://github.com/jackmoore/colorbox/arch
 libraries[colorbox][directory_name] = "colorbox"
 libraries[colorbox][destination] = "libraries"
 
-libraries[lessphp][download][type]= "get"
-libraries[lessphp][download][url] = "https://github.com/oyejorge/less.php/archive/v1.7.0.1.zip"
-libraries[lessphp][directory_name] = "lessphp"
-libraries[lessphp][destination] = "libraries"
-
 libraries[superfish][download][type]= "get"
 libraries[superfish][download][url] = "http://github.com/mehrpadin/Superfish-for-Drupal/archive/master.zip"
 libraries[superfish][directory_name] = "superfish"
@@ -620,3 +670,13 @@ libraries[chosen][download][type]= "get"
 libraries[chosen][download][url] = "https://github.com/harvesthq/chosen/releases/download/v1.2.0/chosen_v1.2.0.zip"
 libraries[chosen][directory_name] = "chosen"
 libraries[chosen][destination] = "libraries"
+
+libraries[jcrop][download][type]= "get"
+libraries[jcrop][download][url] = "https://github.com/tapmodo/Jcrop/zipball/v0.9.12"
+libraries[jcrop][directory_name] = "jcrop"
+libraries[jcrop][destination] = "libraries"
+
+libraries[json2][download][type]= "get"
+libraries[json2][download][url] = "https://github.com/douglascrockford/JSON-js/archive/master.zip"
+libraries[json2][directory_name] = "json2"
+libraries[json2][destination] = "libraries"

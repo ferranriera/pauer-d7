@@ -42,7 +42,7 @@ function sitewide_locale_default_languages() {
     'name' => 'Genesis',
     'native' => 'Genesis',
     'direction' => 0,
-    'enabled' => 1,
+    'enabled' => 0,
     'plurals' => 0,
     'formula' => '',
     'domain' => '',

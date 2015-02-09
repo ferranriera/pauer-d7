@@ -1,6 +1,5 @@
 "menu_name","mlid","plid","link_path","router_path","link_title","external","has_children","expanded","weight","depth","customized","p1"
-main-menu,25036,0,node/1,<front>,home,0,0,0,-1,1,1,0
-main-menu,25038,0,node/2,"How to power your ideas",lorem1,0,0,0,0,1,1,0
-main-menu,25039,25022,node/3,Guide,lorem2,0,0,0,1,1,1,25022
-main-menu,25040,25022,node/4,Rules,lorem3,0,0,0,2,1,1,25022
-main-menu,25041,25022,node/5,FAQ,lorem4,0,0,0,3,1,1,25022
+main-menu,25042,0,node/6,node/6,"Get in touch",0,0,0,4,1,1,NULL
+menu-extra-links,25043,0,node/15,node/15,"Sitemap",0,0,0,0,1,1,0
+menu-extra-links,25044,0,node/7,node/7,"Terms and conditions",0,0,0,0,1,1,0
+management,25046,0,admin/config/content/panelizer,admin/config/content/panelizer,"Panelizer",0,0,0,0,1,1,0

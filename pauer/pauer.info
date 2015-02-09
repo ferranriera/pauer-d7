@@ -1,20 +1,24 @@
-name = Pauer Profile
-description = Pauer profile
+name = Pau Web
+description = Pauer Profile
 version = VERSION
 core = 7.x
 
 dependencies[] = admin_menu
 dependencies[] = block
 dependencies[] = ctools
-dependencies[] = rdf
+;dependencies[] = rdf
 dependencies[] = diff
 dependencies[] = entity
 dependencies[] = entityreference
-dependencies[] = features
+dependencies[] = entity_translation
+dependencies[] = file
+dependencies[] = file_entity
+dependencies[] = media
 dependencies[] = field_ui
 dependencies[] = list
 dependencies[] = taxonomy
 dependencies[] = module_filter
+dependencies[] = number
 dependencies[] = comment
 dependencies[] = page_manager
 dependencies[] = image
@@ -28,12 +32,16 @@ dependencies[] = views_content
 dependencies[] = views_ui
 dependencies[] = locale
 dependencies[] = i18n
+; Specific Pau Education modules
+dependencies[] = p_general
+dependencies[] = p_webform
+
 
 ; System Requirements.
 php_memory_limit = 128M
 
 ; Information added by drupal.org packaging script on 2013-02-22
-version = "7.x-0.9"
+version = "1.0-beta5"
 core = "7.x"
 project = "Pauer"
 datestamp = "1361546441"

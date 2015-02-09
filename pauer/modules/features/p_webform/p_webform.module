@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Pau Education - Webform feature.
+ */
+
+include_once 'p_webform.features.inc';

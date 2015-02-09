@@ -170,11 +170,28 @@ function sitewide_strongarm() {
       ),
     ),
     'extra_fields' => array(
-      'form' => array(),
+      'form' => array(
+        'metatags' => array(
+          'weight' => '40',
+        ),
+        'path' => array(
+          'weight' => '30',
+        ),
+        'language' => array(
+          'weight' => '5',
+        ),
+      ),
       'display' => array(),
     ),
   );
   $export['field_bundle_settings_node__system_pages'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'image_jpeg_quality';
+  $strongarm->value = '100';
+  $export['image_jpeg_quality'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -187,7 +204,7 @@ function sitewide_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_system_pages';
-  $strongarm->value = '0';
+  $strongarm->value = '4';
   $export['language_content_type_system_pages'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -195,16 +212,16 @@ function sitewide_strongarm() {
   $strongarm->api_version = 1;
   $strongarm->name = 'language_default';
   $strongarm->value = (object) array(
-    'language' => 'gen',
-    'name' => 'Genesis',
-    'native' => 'Genesis',
+    'language' => 'en',
+    'name' => 'English',
+    'native' => 'English',
     'direction' => 0,
     'enabled' => 1,
     'plurals' => 0,
     'formula' => '',
     'domain' => '',
-    'prefix' => 'gen',
-    'weight' => 0,
+    'prefix' => 'en',
+    'weight' => -8,
     'javascript' => '',
   );
   $export['language_default'] = $strongarm;
@@ -308,6 +325,13 @@ function sitewide_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'node_admin_theme';
+  $strongarm->value = 1;
+  $export['node_admin_theme'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'node_options_basic_page';
   $strongarm->value = array(
     0 => 'status',
@@ -395,6 +419,41 @@ function sitewide_strongarm() {
     ),
   );
   $export['panelizer_defaults_node_system_pages'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_system_pages_pattern';
+  $strongarm->value = '[node:title]';
+  $export['pathauto_node_system_pages_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_system_pages_und_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_system_pages_und_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'site_frontpage';
+  $strongarm->value = 'node/12';
+  $export['site_frontpage'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'site_name';
+  $strongarm->value = 'Pauer';
+  $export['site_name'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'theme_default';
+  $strongarm->value = 'bootstrap';
+  $export['theme_default'] = $strongarm;
 
   return $export;
 }

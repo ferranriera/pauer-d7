@@ -10,39 +10,35 @@
 function sitewide_user_default_permissions() {
   $permissions = array();
 
-  // Exported permission: 'create title_field'.
-  $permissions['create title_field'] = array(
-    'name' => 'create title_field',
+  // Exported permission: 'create any general_structure bean'.
+  $permissions['create any general_structure bean'] = array(
+    'name' => 'create any general_structure bean',
     'roles' => array(),
-    'module' => 'field_permissions',
+    'module' => 'bean',
   );
 
-  // Exported permission: 'edit own title_field'.
-  $permissions['edit own title_field'] = array(
-    'name' => 'edit own title_field',
+  // Exported permission: 'delete any general_structure bean'.
+  $permissions['delete any general_structure bean'] = array(
+    'name' => 'delete any general_structure bean',
     'roles' => array(),
-    'module' => 'field_permissions',
+    'module' => 'bean',
   );
 
-  // Exported permission: 'edit title_field'.
-  $permissions['edit title_field'] = array(
-    'name' => 'edit title_field',
+  // Exported permission: 'edit any general_structure bean'.
+  $permissions['edit any general_structure bean'] = array(
+    'name' => 'edit any general_structure bean',
     'roles' => array(),
-    'module' => 'field_permissions',
+    'module' => 'bean',
   );
 
-  // Exported permission: 'view own title_field'.
-  $permissions['view own title_field'] = array(
-    'name' => 'view own title_field',
-    'roles' => array(),
-    'module' => 'field_permissions',
-  );
-
-  // Exported permission: 'view title_field'.
-  $permissions['view title_field'] = array(
-    'name' => 'view title_field',
-    'roles' => array(),
-    'module' => 'field_permissions',
+  // Exported permission: 'view any general_structure bean'.
+  $permissions['view any general_structure bean'] = array(
+    'name' => 'view any general_structure bean',
+    'roles' => array(
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'bean',
   );
 
   return $permissions;

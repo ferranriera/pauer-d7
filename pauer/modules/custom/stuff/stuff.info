@@ -1,4 +1,4 @@
-name = Sanco stuff
+name = Stuff
 description = Custom Stuff
 dependencies[] = block
 core = 7.x
