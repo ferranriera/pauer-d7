@@ -13,3 +13,9 @@ Follow instructions:
 5- npm install
 
 6- grunt 
+
+
+
+
+
+FYI: http://ericnish.io/blog/compile-less-files-with-grunt
