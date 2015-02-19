@@ -10,6 +10,13 @@
 function p_general_user_default_permissions() {
   $permissions = array();
 
+  // Exported permission: 'block IP addresses'.
+  $permissions['block IP addresses'] = array(
+    'name' => 'block IP addresses',
+    'roles' => array(),
+    'module' => 'system',
+  );
+
   // Exported permission: 'display EU Cookie Compliance popup'.
   $permissions['display EU Cookie Compliance popup'] = array(
     'name' => 'display EU Cookie Compliance popup',

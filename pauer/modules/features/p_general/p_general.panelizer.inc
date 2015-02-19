@@ -96,10 +96,6 @@ function p_general_panelizer_defaults() {
   $panelizer->display = $display;
   $export['node:system_pages:basic_page'] = $panelizer;
 
-
-
-
-
   $panelizer = new stdClass();
   $panelizer->disabled = FALSE; /* Edit this to true to make a default panelizer disabled initially */
   $panelizer->api_version = 1;
@@ -258,8 +254,6 @@ function p_general_panelizer_defaults() {
   $panelizer->display = $display;
   $export['node:system_pages:newsletter'] = $panelizer;
 
-
-
   $panelizer = new stdClass();
   $panelizer->disabled = FALSE; /* Edit this to true to make a default panelizer disabled initially */
   $panelizer->api_version = 1;
@@ -346,8 +340,6 @@ function p_general_panelizer_defaults() {
   $display->title_pane = '0';
   $panelizer->display = $display;
   $export['node:system_pages:sitemap'] = $panelizer;
-
-
 
   return $export;
 }
