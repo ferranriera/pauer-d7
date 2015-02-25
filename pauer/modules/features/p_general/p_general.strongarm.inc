@@ -810,6 +810,11 @@ function p_general_strongarm() {
   $strongarm->name = 'entity_translation_entity_types';
   $strongarm->value = array(
     'node' => 'node',
+    'bean' => 'bean',
+    'taxonomy_term' => 0,
+    'comment' => 0,
+    'file' => 0,
+    'user' => 0,
   );
   $export['entity_translation_entity_types'] = $strongarm;
 

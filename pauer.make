@@ -126,7 +126,7 @@ projects[clean_markup][version] = 2.7
 projects[clean_markup][type] = "module"
 projects[clean_markup][subdir] = "contrib"
 
-projects[ctools][version] = 1.5
+projects[ctools][version] = 1.6
 projects[ctools][type] = "module"
 projects[ctools][subdir] = "contrib"
 
@@ -195,7 +195,7 @@ projects[entityreference][version] = 1.1
 projects[entityreference][type] = "module"
 projects[entityreference][subdir] = "contrib"
 
-projects[entity_translation][version] = 1.0-beta3
+projects[entity_translation][version] = 1.0-beta4
 projects[entity_translation][type] = "module"
 projects[entity_translation][subdir] = "contrib"
 
@@ -231,6 +231,11 @@ projects[feeds_ex][subdir] = "contrib"
 projects[feeds_oauth][version] = 1.0-beta3
 projects[feeds_oauth][type] = "module"
 projects[feeds_oauth][subdir] = "contrib"
+
+projects[fences][version] = 1.0
+projects[fences][type] = "module"
+projects[fences][subdir] = "contrib"
+projects[fences][patch][1845798] = "https://www.drupal.org/files/issues/fences-check_for_fences_wrapper-1679684-18.patch"
 
 projects[field_group][version] = 1.4
 projects[field_group][type] = "module"
@@ -308,7 +313,7 @@ projects[hybridauth][version] = 2.9
 projects[hybridauth][type] = "module"
 projects[hybridauth][subdir] = "contrib"
 
-projects[i18n][version] = 1.11
+projects[i18n][version] = 1.12
 projects[i18n][type] = "module"
 projects[i18n][subdir] = "contrib"
 
@@ -324,8 +329,10 @@ projects[image_delta_formatter][version] = 1.0-rc1
 projects[image_delta_formatter][type] = "module"
 projects[image_delta_formatter][subdir] = "contrib"
 
-projects[image_link_formatter][version] = 1.0
-projects[image_link_formatter][type] = "module"
+projects[image_link_formatter][type] = module
+projects[image_link_formatter][download][type] = git
+projects[image_link_formatter][download][revision] = 74cfdb2
+projects[image_link_formatter][download][branch] = 7.x-1.x
 projects[image_link_formatter][subdir] = "contrib"
 
 projects[i18nviews][type] = module
@@ -381,7 +388,7 @@ projects[menu_attributes][version] = 1.0-rc3
 projects[menu_attributes][type] = "module"
 projects[menu_attributes][subdir] = "contrib"
 
-projects[menu_block][version] = 2.4
+projects[menu_block][version] = 2.5
 projects[menu_block][type] = "module"
 projects[menu_block][subdir] = "contrib"
 
@@ -410,7 +417,7 @@ projects[menu_views][version] = 2.2
 projects[menu_views][type] = "module"
 projects[menu_views][subdir] = "contrib"
 
-projects[module_filter][version] = 2.0-alpha2
+projects[module_filter][version] = 2.0
 projects[module_filter][type] = "module"
 projects[module_filter][subdir] = "contrib"
 
@@ -437,7 +444,7 @@ projects[panelizer][type] = "module"
 projects[panelizer][subdir] = "contrib"
 projects[panelizer][patch][21] = "https://www.drupal.org/files/issues/panelizer-n1841262-10_0.patch"
 
-projects[panels][version] = 3.4
+projects[panels][version] = 3.5
 projects[panels][type] = "module"
 projects[panels][subdir] = "contrib"
 
@@ -548,7 +555,7 @@ projects[features_extra][download][branch] = 7.x-1.x
 projects[features_extra][subdir] = "contrib"
 projects[features_extra][patch][1279928-49] = "https://www.drupal.org/files/issues/features_extra-add-date-format-support-1279928-49.patch"
 
-projects[views][version] = 3.8
+projects[views][version] = 3.10
 projects[views][type] = "module"
 projects[views][subdir] = "contrib"
 
@@ -573,7 +580,7 @@ projects[views_bulk_operations][type] = "module"
 projects[views_bulk_operations][subdir] = "contrib"
 
 
-projects[webform][version] = 4.2
+projects[webform][version] = 4.3
 projects[webform][type] = "module"
 projects[webform][subdir] = "contrib"
 
