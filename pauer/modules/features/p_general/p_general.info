@@ -118,6 +118,7 @@ features[variable][] = extlink_include
 features[variable][] = extlink_mailto_class
 features[variable][] = extlink_subdomains
 features[variable][] = extlink_target
+features[variable][] = fences_default_classes
 features[variable][] = field_bundle_settings_bean__general_structure
 features[variable][] = jquery_update_compression_type
 features[variable][] = jquery_update_jquery_admin_version
