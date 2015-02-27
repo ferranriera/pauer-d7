@@ -455,6 +455,10 @@ projects[panels_breadcrumbs][download][branch] = 7.x-2.x-dev
 projects[panels_breadcrumbs][subdir] = "contrib"
 projects[panels_breadcrumbs][patch][21] = "https://raw.githubusercontent.com/ferranriera/drupal7-link-patch/master/panels_breadcrumb.patch"
 
+projects[panels_extra_styles][version] = 1.1
+projects[panels_extra_styles][type] = "module"
+projects[panels_extra_styles][subdir] = "contrib"
+
 projects[panels_tabs][type] = module
 projects[panels_tabs][download][type] = git
 projects[panels_tabs][download][revision] = 2caec50

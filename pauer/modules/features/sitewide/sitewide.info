@@ -42,6 +42,7 @@ dependencies[] = entityreference
 dependencies[] = environment_indicator
 dependencies[] = fe_block
 dependencies[] = features
+dependencies[] = fences
 dependencies[] = field_group
 dependencies[] = field_group_link
 dependencies[] = field_permissions
