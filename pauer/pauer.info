@@ -1,4 +1,4 @@
-name = Pau Web
+name = Pauer
 description = Pauer Profile
 version = VERSION
 core = 7.x
@@ -41,7 +41,7 @@ dependencies[] = p_webform
 php_memory_limit = 128M
 
 ; Information added by drupal.org packaging script on 2013-02-22
-version = "1.0-beta5"
+version = "1.0-beta6"
 core = "7.x"
 project = "Pauer"
 datestamp = "1361546441"
