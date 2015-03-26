@@ -49,12 +49,12 @@ if [ "$to" == "dev" ]; then
 	alias_drush_to=@test.dev
 fi
 if [ "$to" == "int" ]; then
-    bd_user=rootint
-	bd_pass=123
+    bd_user=moocsco_user
+	bd_pass=pauer
 	bd_server=localhost
-	bd_name=pauer
+	bd_name=moocsco_db
 	alias_drush_to=@pauer.int
-	alias_ssh=ssh pauer@pauer.pauservers.com
+	alias_ssh=moocsco.int
 fi
 if [ "$to" == "prod" ]; then
     bd_user=rootint
