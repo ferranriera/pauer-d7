@@ -22,6 +22,7 @@ to - Environment to update
 modules - 1 to install modules drom drush make
 fr - to execute a drush fr-all -y
 
+
 `./pauer_commit.sh from=dev to=int`
 Implement a fast commit (under construction)
 
