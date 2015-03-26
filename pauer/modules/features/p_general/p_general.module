@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Pau Education - General feature.
- */
-
-include_once 'p_general.features.inc';

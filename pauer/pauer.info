@@ -24,7 +24,6 @@ dependencies[] = page_manager
 dependencies[] = image
 dependencies[] = panels
 dependencies[] = strongarm
-dependencies[] = sitewide
 dependencies[] = text
 dependencies[] = views
 dependencies[] = views_bulk_operations
@@ -32,9 +31,10 @@ dependencies[] = views_content
 dependencies[] = views_ui
 dependencies[] = locale
 dependencies[] = i18n
-; Specific Pau Education modules
-dependencies[] = p_general
+; Specific modules for the project
+dependencies[] = p_sitewide
 dependencies[] = p_webform
+dependencies[] = p_backoffice
 
 
 ; System Requirements.

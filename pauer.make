@@ -444,6 +444,12 @@ projects[strongarm][version] = 2.0
 projects[strongarm][type] = "module"
 projects[strongarm][subdir] = "contrib"
 
+projects[stringoverrides][type] = module
+projects[stringoverrides][download][type] = git
+projects[stringoverrides][download][revision] = 4229a48
+projects[stringoverrides][download][branch] = 7.x-1.x
+projects[stringoverrides][subdir] = "contrib"
+
 projects[statistics_counter][version] = 1.2
 projects[statistics_counter][type] = "module"
 projects[statistics_counter][subdir] = "contrib"
