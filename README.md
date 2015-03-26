@@ -1,8 +1,6 @@
 Pauer Distro
 ============
 
-# Instalation
-
 ## Requisites:
 
 * Drupal 7
@@ -21,6 +19,16 @@ Pauer Distro
 ## Useful commands
 `./pauer_update.sh modules=1 fr=1 to=dev`
 
+to - Environment to update
+
+modules - 1 to install modules drom drush make
+
+fr - to execute a drush fr-all -y
+
+
 `./pauer_commit.sh from=dev to=int`
+Implement a fast commit (under construction)
 
 `./pauer_sync.sh from=int to=dev`
+Sync content and files between environments
+
