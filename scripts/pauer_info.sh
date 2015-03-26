@@ -45,8 +45,8 @@ if [ "$to" == "dev" ]; then
 	bd_user=root
 	bd_pass=123
 	bd_server=localhost
-	bd_name=pauer
-	alias_drush_to=@pauer.dev
+	bd_name=test
+	alias_drush_to=@test.dev
 fi
 if [ "$to" == "int" ]; then
     bd_user=rootint
