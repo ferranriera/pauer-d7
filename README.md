@@ -20,5 +20,7 @@ Pauer Distro
 
 ## Useful commands
 `./pauer_update.sh modules=1 fr=1 to=dev`
+
 `./pauer_commit.sh from=dev to=int`
+
 `./pauer_sync.sh from=int to=dev`
