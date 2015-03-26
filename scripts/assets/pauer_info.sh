@@ -1,5 +1,5 @@
 #!/bin/bash
-. pauer_get_vars.sh
+. assets/pauer_get_vars.sh
 
 #Development environment
 if [ "$to" == "dev" ]; then
