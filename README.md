@@ -1,8 +1,6 @@
 Pauer Distro
 ============
 
-# Instalation
-
 ## Requisites:
 
 * Drupal 7
