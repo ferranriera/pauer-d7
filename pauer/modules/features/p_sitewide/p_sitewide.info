@@ -238,7 +238,6 @@ features[variable][] = page_manager_node_edit_disabled
 features[variable][] = panelizer_defaults_node_system_pages
 features[variable][] = pathauto_node_system_pages_pattern
 features[variable][] = pathauto_node_system_pages_und_pattern
-features[variable][] = site_frontpage
 features[variable][] = site_name
 features[variable][] = theme_default
 features_exclude[dependencies][tweet_feed] = tweet_feed
