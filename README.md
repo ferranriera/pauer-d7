@@ -19,3 +19,6 @@ Pauer Distro
 * Example to configure drush aliases: https://gist.github.com/ferranriera/e2dc7193824268dc9738
 
 ## Useful commands
+`./pauer_update.sh modules=1 fr=1 to=dev`
+`./pauer_commit.sh from=dev to=int`
+`./pauer_sync.sh from=int to=dev`
