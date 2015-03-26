@@ -18,6 +18,7 @@ Pauer Distro
 
 ## Useful commands
 `./pauer_update.sh modules=1 fr=1 to=dev`
+
 to - Environment to update
 
 modules - 1 to install modules drom drush make
