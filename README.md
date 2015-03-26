@@ -17,3 +17,5 @@ Pauer Distro
 5. The distro is now installed with user: admin and password:admin
 
 * Example to configure drush aliases: https://gist.github.com/ferranriera/e2dc7193824268dc9738
+
+## Useful commands
