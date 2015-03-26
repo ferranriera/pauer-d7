@@ -1,5 +1,5 @@
 #!/bin/bash
-. pauer_info.sh
+. assets/pauer_info.sh
 drush $alias_drush_from fu-all  -y
 git checkout master
 git add --all
