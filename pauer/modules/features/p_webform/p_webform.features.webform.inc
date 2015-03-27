@@ -170,12 +170,12 @@ $webforms = array();
   ),
   'cid' => 0,
   'last_comment_name' => NULL,
-  'last_comment_uid' => 1,
+  'last_comment_uid' => 0,
   'comment_count' => 0,
-  'name' => 'admin',
+  'name' => '',
   'picture' => 0,
-  'data' => 'a:1:{s:7:"contact";i:1;}',
-  'webform_features_author' => 'admin',
+  'data' => NULL,
+  'webform_features_author' => '',
   'webform_features_revision_author' => '',
 );
 return $webforms;
