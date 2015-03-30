@@ -5,6 +5,7 @@ docroot
 ######################
 .DS_Store*
 pauer/config/install/core.extension.yml
+scripts/assets/pauer_info.sh
 ehthumbs.db
 Icon\?
 Thumbs.db

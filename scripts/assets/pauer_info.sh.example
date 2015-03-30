@@ -16,10 +16,10 @@ fi
 
 #Integration environment
 if [ "$to" == "int" ]; then
-    bd_user=moocsco_user
-	bd_pass=pauer
+    bd_user=root
+	bd_pass=root
 	bd_server=localhost
-	bd_name=moocsco_db
+	bd_name=db
 	alias_drush_to=@pauer.int
 	alias_ssh=moocsco.int
 fi
@@ -30,12 +30,12 @@ fi
 
 #Production environment
 if [ "$to" == "prod" ]; then
-    bd_user=rootint
-	bd_pass=123
+    bd_user=root
+	bd_pass=root
 	bd_server=localhost
 	bd_name=pauer
 	alias_drush_to=@pauer.prod
-    alias_ssh=moocsco.prod
+    alias_ssh=pauer.prod
 
 fi
 if [ "$from" == "prod" ]; then
