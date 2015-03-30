@@ -25,10 +25,10 @@ cd scripts/assets
 cp .htaccess_normal ../../docroot/
 cd ../../docroot
 mv .htaccess_normal .htaccess
-drush $alias_drush_to cc all
+drush $alias_drush cc all
 fi
 if [ "$fr" == "1" ]; then
 #Download all modules and core
-drush $alias_drush_to fr-all -y
+drush $alias_drush fr-all -y
 fi
-drush $alias_drush_to cc all
+drush $alias_drush cc all
