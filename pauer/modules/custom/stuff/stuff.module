@@ -2,43 +2,22 @@
 
 
 function stuff_block_info() {
-    $blocks['pauweb_logo'] = array(
-        'info' => t('Logo'),
-    );
-    $blocks['pauweb_copyright'] = array(
+
+    $blocks['pauer_copyright'] = array(
         'info' => t('Copyright'),
-    );
-    $blocks['pauweb_title'] = array(
-        'info' => t('Determine the title to show'),
     );
     return $blocks;
 }
 
 function stuff_block_view($delta = '') {
-    $module_path="/".drupal_get_path('module', 'stuff');
     $block="";
     switch ($delta) {
-        case 'pauweb_logo':
-            $img = theme('image', array('path' => $module_path.'/img/pau_logo.png','alt' => 'Pau Education', 'title' => 'Pau Education', 'attributes' => array('class' => 'logo-pauweb'),));
-            $block['content'] = l($img, '<front>', array('html' => TRUE));
-            break;
-        case 'pauweb_copyright':
+        case 'pauer_copyright':
             $version=system_get_info('module');
             if ($version) {
                 $version=$version['pauer']['version'];
             }
-            $block['content'] = t('P.A.U. Education S.L. @year. All rights reserved. Version: '.$version, array('@year' => date("Y")));
-            break;
-        case 'pauweb_title':
-            if ($node = menu_get_object()) {
-                // Get the nid
-                $nid = $node->nid;
-            }
-            if (isset($nid)){
-                $block['content'] = views_embed_view('sp_get_current_subtitle', 'panel_pane_1');
-            } else {
-                $block['content'] = '<h2>'.drupal_get_title().'</h2>';
-            }
+            $block['content'] = t('Copyright @year. All rights reserved. Version: '.$version, array('@year' => date("Y")));
             break;
 
     }
