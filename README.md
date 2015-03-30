@@ -19,16 +19,20 @@ Pauer Distro
 
 ## Useful commands
 `./pauer_update.sh modules=1 fr=1`
-
-
-modules - 1 to install modules drom drush make
-
-fr - to execute a drush fr-all -y
+git master and git pull form repository
+if modules = 1 will reinstall the modules specified in drush make
+if fr =1 will execute a `drush fr-all -y` 
 
 
 `./pauer_commit.sh fu=1`
-Implement a fast commit if fu=1 will do a fu and commit it to the content environment
+Implement a fast commit
+git add -all
+git commit 
+git push
+And then connect to integration/content environment and execute the script `./pauer_update.sh`
+
+if fu=1 will execute a `drush fu-all -y`
 
 `./pauer_sync.sh`
-Sync content and files between content environment to dev
+Sync content and files between content environment to dev environment
 
