@@ -12,7 +12,7 @@ git commit -m "Fast commit"
 git push
 
 if [ "$fu" == "1" ]; then
-    alias_ssh_content_environment -t 'cd ./www/scripts/pauer_update.sh fr=1; exit; bash -l'
+    alias_ssh_content_environment -t './www/scripts/pauer_update.sh fr=1; exit; bash -l'
 else
-    alias_ssh_content_environment -t 'cd ./www/scripts/pauer_update.sh; exit; bash -l'
+    alias_ssh_content_environment -t './www/scripts/pauer_update.sh; exit; bash -l'
 fi
