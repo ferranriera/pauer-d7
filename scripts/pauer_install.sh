@@ -15,3 +15,6 @@ ln -s ../../$distro_name $distro_name
 drush -y si --db-url=mysql://$bd_user:$bd_pass@$bd_server/$bd_name --locale=$installation_language --account-pass=admin $distro_name
 # login as admin after the install.
 drush fr-all -y
+if [ "$sync" == "1" ]; then
+	cd .. && cd .. && cd scripts && ./pauer_sync.sh
+fi

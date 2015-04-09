@@ -16,4 +16,7 @@ do
         if [ "${elements[0]}" == "fu" ]; then
         fu=${elements[1]}
     fi
+    if [ "${elements[0]}" == "sync" ]; then
+        sync=${elements[1]}
+    fi
 done
