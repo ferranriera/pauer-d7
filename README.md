@@ -18,6 +18,9 @@ Pauer Distro
 * Example to configure drush aliases: https://gist.github.com/ferranriera/e2dc7193824268dc9738
 
 ## Useful commands
+`./pauer_install.sh sync=1`
+Do the install and then ./pauer_sync.sh 
+
 `./pauer_update.sh modules=1 fr=1`
 git master and git pull form repository
 if modules = 1 will reinstall the modules specified in drush make
