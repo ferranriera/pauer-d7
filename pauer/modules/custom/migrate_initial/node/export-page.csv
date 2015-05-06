@@ -1,6 +1,0 @@
-Sid,Nid,Title,field_body,field_sp_subtitle,language,path,pathauto,panelizer,lat,lon,field_sp_image,field_sp_image_2
-16,12,Home,,"",en,home,0,node:system_pages:home,,,,
-21,6,"Get in touch",,"Barcelona, Europe, the world!",en,get-in-touch,0,node:system_pages:basic_page,41.3955195,2.1478290000000015
-22,7,"Terms and conditions",,,en,terms-and-conditions,0,node:system_pages:basic_page,,,,
-27,14,Newsletter,,"Sign up to our Newsletter",en,newsletter,,node:system_pages:basic_page,,
-28,15,Sitemap,,,en,sitemap,,node:system_pages:basic_page,,,,

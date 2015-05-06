@@ -27,7 +27,7 @@ api = 2
 ; install profiles *should not* include a core project.
 
 ; Drupal 7.x. Requires the `core` property to be set to 7.x.
-projects[drupal][version] = 7.35
+projects[drupal][version] = 7.36
 
 ; Modules
 
@@ -54,10 +54,6 @@ projects[backup_migrate][subdir] = "contrib"
 projects[bean][version] = 1.9
 projects[bean][type] = "module"
 projects[bean][subdir] = "contrib"
-
-projects[bean_panels][version] = 1.3
-projects[bean_panels][type] = "module"
-projects[bean_panels][subdir] = "contrib"
 
 projects[better_exposed_filters][version] = 3.0-beta4
 projects[better_exposed_filters][type] = "module"
@@ -176,21 +172,9 @@ projects[eu-cookie-compliance][download][revision] = 0e6a86b
 projects[eu-cookie-compliance][download][branch] = 7.x-2.x
 projects[eu-cookie-compliance][subdir] = "contrib"
 
-projects[epsacrop][type] = module
-projects[epsacrop][download][type] = git
-projects[epsacrop][download][revision] = 8f3a1bb
-projects[epsacrop][download][branch] = 7.x-2.x
-projects[epsacrop][subdir] = "contrib"
-projects[epsacrop][patch][1845798] = "https://www.drupal.org/files/issues/epsacrop-fix_update_hook-1396500-30.patch"
-
 projects[extlink][version] = 1.18
 projects[extlink][type] = "module"
 projects[extlink][subdir] = "contrib"
-
-projects[fences][version] = 1.0
-projects[fences][type] = "module"
-projects[fences][subdir] = "contrib"
-projects[fences][patch][1845798] = "https://www.drupal.org/files/issues/fences-check_for_fences_wrapper-1679684-18.patch"
 
 projects[field_group][version] = 1.4
 projects[field_group][type] = "module"
@@ -216,6 +200,10 @@ projects[field_permissions][patch][1845798] = "https://drupal.org/files/issues/f
 projects[field_validation][version] = 2.4
 projects[field_validation][type] = "module"
 projects[field_validation][subdir] = "contrib"
+
+projects[focal_point][version] = 1.0-beta4
+projects[focal_point][type] = "module"
+projects[focal_point][subdir] = "contrib"
 
 projects[flexslider][version] = 2.0-alpha3
 projects[flexslider][type] = "module"
@@ -279,12 +267,6 @@ projects[image_link_formatter][download][revision] = 74cfdb2
 projects[image_link_formatter][download][branch] = 7.x-1.x
 projects[image_link_formatter][subdir] = "contrib"
 
-projects[i18nviews][type] = module
-projects[i18nviews][download][type] = git
-projects[i18nviews][download][revision] = 26bd52c
-projects[i18nviews][download][branch] = 7.x-3.x
-projects[i18nviews][subdir] = "contrib"
-
 projects[job_scheduler][version] = 2.0-alpha3
 projects[job_scheduler][type] = "module"
 projects[job_scheduler][subdir] = "contrib"
@@ -300,10 +282,6 @@ projects[lang_dropdown][subdir] = "contrib"
 projects[link][version] = 1.3
 projects[link][type] = "module"
 projects[link][subdir] = "contrib"
-
-projects[less][version] = 3.0
-projects[less][type] = "module"
-projects[less][subdir] = "contrib"
 
 projects[libraries][version] = 2.2
 projects[libraries][type] = "module"
@@ -357,10 +335,6 @@ projects[media_youtube][subdir] = "contrib"
 projects[menu_breadcrumb][version] = 1.6
 projects[menu_breadcrumb][type] = "module"
 projects[menu_breadcrumb][subdir] = "contrib"
-
-projects[menu_item_visibility][version] = 1.x-dev
-projects[menu_item_visibility][type] = "module"
-projects[menu_item_visibility][subdir] = "contrib"
 
 projects[menu_views][version] = 2.2
 projects[menu_views][type] = "module"
@@ -536,10 +510,6 @@ projects[webform_ajax][download][revision] = ef2a9a9
 projects[webform_ajax][download][branch] = 7.x-1.x
 projects[webform_ajax][subdir] = "contrib"
 
-projects[wysiwyg][version] = 2.2
-projects[wysiwyg][type] = "module"
-projects[wysiwyg][subdir] = "contrib"
-
 
 ; Github custom modules
 ; ---------
@@ -549,24 +519,6 @@ projects[fabe][type] = "module"
 projects[fabe][download][type] = "git"
 projects[fabe][download][revision] = e9e0ea1cd790eaf12e1b6bd021075a78db4f0f8c
 projects[fabe][download][url]="https://github.com/ferranriera/Field-API-Bean-Editor.git"
-
-projects[angular_twitter][subdir] = "custom"
-projects[angular_twitter][type] = "module"
-projects[angular_twitter][download][type] = "git"
-projects[angular_twitter][download][revision] = 3a1a5d41d87ed270e40092786348ef841d88116c
-projects[angular_twitter][download][url]="https://github.com/ferranriera/Angular-Twitter-D7.git"
-
-projects[DRUPAU_i18n][subdir] = "custom"
-projects[DRUPAU_i18n][type] = "module"
-projects[DRUPAU_i18n][download][type] = "git"
-projects[DRUPAU_i18n][download][revision] = 7b019c7779416fd541435f0a60a52d0c13f14d72
-projects[DRUPAU_i18n][download][url]="https://github.com/ferranriera/DRUPAU-i18n.git"
-
-projects[DRUPAU_i18n_labels_import][subdir] = "custom"
-projects[DRUPAU_i18n_labels_import][type] = "module"
-projects[DRUPAU_i18n_labels_import][download][type] = "git"
-projects[DRUPAU_i18n_labels_import][download][revision] = 2498748759c70d4cb0b9e056aaf15fa162e4f476
-projects[DRUPAU_i18n_labels_import][download][url]="https://github.com/ferranriera/DRUPAU-i18n-Labels-import.git"
 
 
 ; Themes
@@ -603,13 +555,3 @@ libraries[flexslider][download][type]= "get"
 libraries[flexslider][download][url] = "https://github.com/woothemes/FlexSlider/archive/master.zip"
 libraries[flexslider][directory_name] = "flexslider"
 libraries[flexslider][destination] = "libraries"
-
-libraries[jcrop][download][type]= "get"
-libraries[jcrop][download][url] = "https://github.com/tapmodo/Jcrop/zipball/v0.9.12"
-libraries[jcrop][directory_name] = "Jcrop"
-libraries[jcrop][destination] = "modules/contrib/epsacrop"
-
-libraries[json2][download][type]= "get"
-libraries[json2][download][url] = "https://github.com/douglascrockford/JSON-js/archive/master.zip"
-libraries[json2][directory_name] = "json2"
-libraries[json2][destination] = "modules/contrib/epsacrop"

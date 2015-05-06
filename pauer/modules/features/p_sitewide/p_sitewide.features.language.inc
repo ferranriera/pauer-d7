@@ -36,18 +36,5 @@ function p_sitewide_locale_default_languages() {
     'prefix' => 'es',
     'weight' => 0,
   );
-  // Exported language: gen.
-  $languages['gen'] = array(
-    'language' => 'gen',
-    'name' => 'Genesis',
-    'native' => 'Genesis',
-    'direction' => 0,
-    'enabled' => 0,
-    'plurals' => 0,
-    'formula' => '',
-    'domain' => '',
-    'prefix' => 'gen',
-    'weight' => 0,
-  );
   return $languages;
 }

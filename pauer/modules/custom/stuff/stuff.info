@@ -1,6 +1,0 @@
-name = Stuff
-description = Custom Stuff
-dependencies[] = block
-core = 7.x
-stylesheets[all][] = css/stuff.css
-scripts[] = js/stuff.js

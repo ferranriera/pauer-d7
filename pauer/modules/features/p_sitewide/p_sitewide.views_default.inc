@@ -48,6 +48,22 @@ function p_sitewide_views_default_views() {
   $handler->display->display_options['fields']['title_field']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title_field']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['title_field']['link_to_entity'] = 0;
+  $translatables['bean_view_to_clone'] = array(
+    t('Master'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
+  );
   $export['bean_view_to_clone'] = $view;
 
   $view = new view();
@@ -97,6 +113,22 @@ function p_sitewide_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  $translatables['content_view_to_clone'] = array(
+    t('Master'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
+  );
   $export['content_view_to_clone'] = $view;
 
   $view = new view();
@@ -217,6 +249,27 @@ function p_sitewide_views_default_views() {
   $handler->display->display_options['fields']['rendered']['label'] = '';
   $handler->display->display_options['fields']['rendered']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['rendered']['element_default_classes'] = FALSE;
+  $translatables['gallery'] = array(
+    t('Master'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
+    t('Content'),
+    t('All'),
+    t('Gallery'),
+    t('View panes'),
+    t('Gallery Thumbs'),
+  );
   $export['gallery'] = $view;
 
   $view = new view();
@@ -459,6 +512,34 @@ function p_sitewide_views_default_views() {
   $handler->display->display_options['menu']['description'] = 'Bean blocks overview';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['context'] = 0;
+  $translatables['pau_bean_block_overview'] = array(
+    t('Defaults'),
+    t('Bean Block Overview'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Items per page'),
+    t('- All -'),
+    t('Offset'),
+    t('« first'),
+    t('‹ previous'),
+    t('next ›'),
+    t('last »'),
+    t('Title'),
+    t('Label'),
+    t('Block Delta'),
+    t('Type'),
+    t('Operations'),
+    t('Bean Block List'),
+    t('Internal, numeric block ID'),
+    t('.'),
+    t(','),
+    t('Delete items'),
+    t('- Choose an operation -'),
+  );
   $export['pau_bean_block_overview'] = $view;
 
   return $export;

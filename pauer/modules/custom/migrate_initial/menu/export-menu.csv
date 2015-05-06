@@ -1,5 +1,0 @@
-"menu_name","mlid","plid","link_path","router_path","link_title","external","has_children","expanded","weight","depth","customized","p1"
-main-menu,25042,0,node/6,node/6,"Get in touch",0,0,0,4,1,1,NULL
-menu-extra-links,25043,0,node/15,node/15,"Sitemap",0,0,0,0,1,1,0
-menu-extra-links,25044,0,node/7,node/7,"Terms and conditions",0,0,0,0,1,1,0
-management,25046,0,admin/config/content/panelizer,admin/config/content/panelizer,"Panelizer",0,0,0,0,1,1,0
