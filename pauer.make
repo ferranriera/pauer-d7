@@ -130,7 +130,7 @@ projects[disable_term_node_listings][download][branch] = 7.x-1.x-dev
 projects[disable_term_node_listings][subdir] = "contrib"
 projects[disable_term_node_listings][patch][1845798] = "https://www.drupal.org/files/issues/disable_term_node_listings-fix-i18n-1936304-4.patch"
 
-projects[ds][version] = 2.7
+projects[ds][version] = 2.8
 projects[ds][type] = "module"
 projects[ds][subdir] = "contrib"
 
@@ -402,7 +402,7 @@ projects[search_api_db][version] = 1.4
 projects[search_api_db][type] = "module"
 projects[search_api_db][subdir] = "contrib"
 
-projects[smart_trim][version] = 1.4
+projects[smart_trim][version] = 1.5
 projects[smart_trim][type] = "module"
 projects[smart_trim][subdir] = "contrib"
 
@@ -465,7 +465,7 @@ projects[features_extra][download][branch] = 7.x-1.x
 projects[features_extra][subdir] = "contrib"
 projects[features_extra][patch][1279928-49] = "https://www.drupal.org/files/issues/features_extra-add-date-format-support-1279928-49.patch"
 
-projects[views][version] = 3.10
+projects[views][version] = 3.11
 projects[views][type] = "module"
 projects[views][subdir] = "contrib"
 
