@@ -48,6 +48,41 @@ function p_sitewide_views_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_eck_bundle_info().
+ */
+function p_sitewide_eck_bundle_info() {
+  $items = array(
+    'multiple_values_multiple_values' => array(
+      'machine_name' => 'multiple_values_multiple_values',
+      'entity_type' => 'multiple_values',
+      'name' => 'multiple_values',
+      'label' => 'Multiple Values',
+    ),
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_eck_entity_type_info().
+ */
+function p_sitewide_eck_entity_type_info() {
+  $items = array(
+    'multiple_values' => array(
+      'name' => 'multiple_values',
+      'label' => 'Multiple Values',
+      'properties' => array(
+        'title' => array(
+          'label' => 'Title',
+          'type' => 'text',
+          'behavior' => 'title',
+        ),
+      ),
+    ),
+  );
+  return $items;
+}
+
+/**
  * Implements hook_node_info().
  */
 function p_sitewide_node_info() {

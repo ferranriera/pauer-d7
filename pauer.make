@@ -267,6 +267,16 @@ projects[image_link_formatter][download][revision] = 74cfdb2
 projects[image_link_formatter][download][branch] = 7.x-1.x
 projects[image_link_formatter][subdir] = "contrib"
 
+projects[inline_entity_form][version] = 1.5
+projects[inline_entity_form][type] = "module"
+projects[inline_entity_form][subdir] = "contrib"
+
+projects[i18nviews][type] = module
+projects[i18nviews][download][type] = git
+projects[i18nviews][download][revision] = 26bd52c
+projects[i18nviews][download][branch] = 7.x-3.x
+projects[i18nviews][subdir] = "contrib"
+
 projects[job_scheduler][version] = 2.0-alpha3
 projects[job_scheduler][type] = "module"
 projects[job_scheduler][subdir] = "contrib"

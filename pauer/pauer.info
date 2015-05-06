@@ -33,15 +33,13 @@ dependencies[] = locale
 dependencies[] = i18n
 ; Specific modules for the project
 dependencies[] = p_sitewide
-dependencies[] = p_webform
-dependencies[] = p_backoffice
 
 
 ; System Requirements.
 php_memory_limit = 128M
 
 ; Information added by drupal.org packaging script on 2013-02-22
-version = "1.0-beta6"
+version = "1.0-beta7"
 core = "7.x"
 project = "Pauer"
 datestamp = "1361546441"

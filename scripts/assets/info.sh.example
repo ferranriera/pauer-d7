@@ -1,5 +1,5 @@
 #!/bin/bash
-. assets/pauer_get_vars.sh
+. assets/get_vars.sh
 
     bd_user=root
 	bd_pass=123

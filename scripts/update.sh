@@ -1,5 +1,5 @@
 #!/bin/bash
-. assets/pauer_info.sh
+. assets/info.sh
 
 if [ "$modules" == "1" ]; then
 #Put the maintenance.html as index default page

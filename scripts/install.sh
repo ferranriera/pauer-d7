@@ -1,5 +1,5 @@
 #!/bin/bash
-. assets/pauer_info.sh
+. assets/info.sh
 cd ..
 # Make sure there is no docroot.
 chmod -R 777 docroot

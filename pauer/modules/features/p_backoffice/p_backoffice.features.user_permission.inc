@@ -299,33 +299,6 @@ function p_backoffice_user_default_permissions() {
     'module' => 'file_entity',
   );
 
-  // Exported permission: 'epsacrop create crops'.
-  $permissions['epsacrop create crops'] = array(
-    'name' => 'epsacrop create crops',
-    'roles' => array(
-      'Editorial Team' => 'Editorial Team',
-    ),
-    'module' => 'epsacrop',
-  );
-
-  // Exported permission: 'epsacrop delete all crops'.
-  $permissions['epsacrop delete all crops'] = array(
-    'name' => 'epsacrop delete all crops',
-    'roles' => array(
-      'Editorial Team' => 'Editorial Team',
-    ),
-    'module' => 'epsacrop',
-  );
-
-  // Exported permission: 'epsacrop edit all crops'.
-  $permissions['epsacrop edit all crops'] = array(
-    'name' => 'epsacrop edit all crops',
-    'roles' => array(
-      'Editorial Team' => 'Editorial Team',
-    ),
-    'module' => 'epsacrop',
-  );
-
   // Exported permission: 'toggle field translatability'.
   $permissions['toggle field translatability'] = array(
     'name' => 'toggle field translatability',
