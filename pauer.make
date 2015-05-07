@@ -176,6 +176,10 @@ projects[extlink][version] = 1.18
 projects[extlink][type] = "module"
 projects[extlink][subdir] = "contrib"
 
+projects[fences][version] = 1.0
+projects[fences][type] = "module"
+projects[fences][subdir] = "contrib"
+
 projects[field_group][version] = 1.4
 projects[field_group][type] = "module"
 projects[field_group][subdir] = "contrib"
