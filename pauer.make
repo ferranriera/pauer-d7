@@ -404,6 +404,18 @@ projects[profile2][download][revision] = 724a5e9
 projects[profile2][download][branch] = 7.x-1.x-dev
 projects[profile2][subdir] = "contrib"
 
+projects[replicate][version] = 1.1
+projects[replicate][type] = "module"
+projects[replicate][subdir] = "contrib"
+
+projects[replicate_ui][version] = 1.4
+projects[replicate_ui][type] = "module"
+projects[replicate_ui][subdir] = "contrib"
+
+projects[replicate_bean][version] = 1.0
+projects[replicate_bean][type] = "module"
+projects[replicate_bean][subdir] = "contrib"
+
 projects[select_or_other][version] = 2.20
 projects[select_or_other][type] = "module"
 projects[select_or_other][subdir] = "contrib"
