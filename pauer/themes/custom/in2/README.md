@@ -12,14 +12,14 @@ Bootstrap sub-theme customized by IN2 Drupal team
 
 * Less compilation to CSS (local environments) examples:
 
-1- Grunt, with watch plugin 
-	> http://ericnish.io/blog/compile-less-files-with-grunt
-	> cd yourproject/grunt && grunt
+	1- Grunt, with watch plugin 
+		> http://ericnish.io/blog/compile-less-files-with-grunt
+		> cd yourproject/grunt && grunt
 
-2- Lessc, lessc and guidestyle generator (/profiles/pauer/themes/custom/in2/guide/style.html)
-	> http://lesscss.org/
-	> https://jacobrask.github.io/styledocco/
-	> cd yourproject/profiles/pauer/themes/custom/in2 && lessc less/style.less > css/style.css && styledocco -n "yourprojectname" -o guide css
+	2- Lessc, lessc and guidestyle generator (/profiles/pauer/themes/custom/in2/guide/style.html)
+		> http://lesscss.org/
+		> https://jacobrask.github.io/styledocco/
+		> cd yourproject/profiles/pauer/themes/custom/in2 && lessc less/style.less > css/style.css && styledocco -n "yourprojectname" -o guide css
 
 	
 * Less code for guide style generator example:
