@@ -1,15 +1,16 @@
 Bootstrap sub-theme customized by IN2 Drupal team
+=================================================
 
-Main features:
+## Main features:
 
-- SMACCS arquitechture
-- less usage
-- custom layouts 
+* SMACCS arquitechture
+* less usage
+* custom layouts 
 
 
-Useful commands and plugins
+## Useful commands and plugins
 
-Less compilation to CSS (local environments) examples:
+* Less compilation to CSS (local environments) examples:
 
 1- Grunt, with watch plugin 
 	> http://ericnish.io/blog/compile-less-files-with-grunt
@@ -21,7 +22,7 @@ Less compilation to CSS (local environments) examples:
 	> cd yourproject/profiles/pauer/themes/custom/in2 && lessc less/style.less > css/style.css && styledocco -n "yourprojectname" -o guide css
 
 	
-Less code for guide style generator example:
+* Less code for guide style generator example:
 
 /*
   Back to top button
