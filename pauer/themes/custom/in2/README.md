@@ -24,26 +24,26 @@ Bootstrap sub-theme customized by IN2 Drupal team
 	
 * Less code for guide style generator example:
 
-/*
-  Back to top button
-  
-   <div class="btn-back-top">
-   		<a title="Back to top"" href="#init">Back to top</a>
-   </div>
-*/
-
-.btn-back-top {
-	a {
-		background: @ss-blue;
-		color:white;
-		font-family: 'Bree Serif', serif;
-		padding:6px 12px;
-		font-size: 24px;
-		float:right;
-		text-transform: uppercase;
+	/*
+	  Back to top button
+	  
+	   <div class="btn-back-top">
+	   		<a title="Back to top"" href="#init">Back to top</a>
+	   </div>
+	*/
+	
+	.btn-back-top {
+		a {
+			background: @ss-blue;
+			color:white;
+			font-family: 'Bree Serif', serif;
+			padding:6px 12px;
+			font-size: 24px;
+			float:right;
+			text-transform: uppercase;
+		}
+		a:hover {
+			color:white;
+			text-decoration: none;
+		}
 	}
-	a:hover {
-		color:white;
-		text-decoration: none;
-	}
-}
