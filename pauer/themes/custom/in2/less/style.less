@@ -1,24 +1,16 @@
 // Bootstrap library.
-@import 'bootstrap.less';
+@import 'bootstrap/bootstrap.less';
 
-// Base-theme overrides.
-@import 'overrides.less';
-@import 'custom-variables.less';
-@import 'variables.less';
+// Base 
+@import 'base/variables.less';
+@import 'base/reset.less';
+@import 'base/fonts.less';
+@import 'base/default.less';
 
-// Theme specific.
-@import 'content/common.less';
-@import 'content/reset.less';
+// Layout
+@import 'layout/section.less';
+@import 'layout/header.less';
+@import 'layout/footer.less';
 
-@import 'content/header.less';
-@import 'content/footer.less';
-@import 'content/homepage.less';
-
-@import 'content/system-pages/base.less';
-
-@import 'content/nodes/blog.less';
-
-@import 'content/responsive/desktop.less';
-@import 'content/responsive/mobile.less';
-@import 'content/responsive/tablet.less';
-@import 'content/responsive/tablet-mobile.less';
+//components
+@import 'components/back-to-top.less';

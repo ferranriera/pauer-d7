@@ -16,14 +16,11 @@
 ?>
 <div class="row clearfix">
 	<div class="col-md-12 column">
-		<?php print $content['top']; ?>
-	</div>
-	<div class="col-md-12 column">
-			<div class="col-md-6 column left">
-				<?php print $content['left']; ?>
-			</div>
-			<div class="col-md-6 column">
-				<?php print $content['right']; ?>
-			</div>
+		<div class="col-md-3 column">
+			<?php print $content['left']; ?>
+		</div>
+		<div class="col-md-9 column">
+			<?php print $content['right']; ?>
+		</div>
 	</div>
 </div>

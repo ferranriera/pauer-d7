@@ -9,8 +9,7 @@ $plugin = array(
   'css' => '2coltop.css',
   'regions' => array(
      'top' => t('Top'),
-    'left1' => t('Left1'),
-        'left2' => t('Left2'),
+        'left' => t('Left'),
     'right' => t('Right'),
   ),
 );
