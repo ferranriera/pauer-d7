@@ -93,7 +93,6 @@
   <div class="row">
 
     <section>
-    <div class="container centered">
         <div class="pane-inner">
       <?php if (!empty($page['highlighted'])): ?>
         <div class="highlighted jumbotron"><?php print render($page['highlighted']); ?></div>
@@ -117,7 +116,6 @@
       <?php endif; ?>
       <?php print render($page['content']); ?>
       </div>
-    </div>
     </section>
 
   </div>

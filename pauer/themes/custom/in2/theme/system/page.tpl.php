@@ -76,9 +76,9 @@
 <?php /*<header id="navbar" role="banner" class="<?php print $navbar_classes; ?>"> */ ?>
 <header>
     <?php if (!empty($page['header'])): ?>
-          <div class="container">
+    	<div class="pane-inner">
           <?php print render($page['header']); ?>
-          </div>
+    	</div>
     <?php endif; ?>
 
     <?php if (!empty($page['navigation'])): ?>
@@ -93,12 +93,7 @@
     <?php endif; ?>
 </header>
 
-<div class="main-container">
-
-  <div class="row">
-
-    <section>
-    <div class="container">
+    <article>
       <?php if (!empty($page['highlighted'])): ?>
         <div class="highlighted jumbotron"><?php print render($page['highlighted']); ?></div>
       <?php endif; ?>
@@ -120,13 +115,9 @@
         <ul class="action-links"><?php print render($action_links); ?></ul>
       <?php endif; ?>
       <?php print render($page['content']); ?>
-      </div>
-    </section>
-
-  </div>
-</div>
-<footer class="footer">
-  <div class="container">
-  <?php print render($page['footer']); ?>
-  </div>
+    </article>
+<footer>
+	<div class="pane-inner">
+		<?php print render($page['footer']); ?>
+	</div>
 </footer>
