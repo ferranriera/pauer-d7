@@ -6311,15 +6311,16 @@ ul {
 span.mailto {
   display: none;
 }
-body span,
-body p {
-  font-family: 'Open Sans';
-}
 body h1,
 body h2,
 body h3,
 body h4 {
   font-family: 'Bree Serif';
+}
+body li,
+body span,
+body p {
+  font-family: 'Open Sans';
 }
 div.contextual-links-wrapper ul.contextual-links {
   padding: 14px 30px;
@@ -6345,375 +6346,26 @@ div.contextual-links-wrapper ul.contextual-links li a {
   
     <div class="basic-page"></div>
 */
-.basic-page {
-  padding: 40px 0px;
-}
-.basic-page h2 {
-  margin-bottom: 20px;
-  color: #3c7098;
-}
 /*
-  Big Sections of homepage, defines the padding of section and default values
-  
-    <div class="big"><h2>Title Example</h2></div>
-*/
-.big {
-  padding: 60px 20px;
-}
-.big .left {
-  padding-right: 20px !important;
-}
-.big h2 {
-  font-family: 'Bree Serif';
-  color: #3c7098;
-  margin-bottom: 20px;
-}
-.big .subtitle {
-  margin-bottom: 40px;
-}
-.big .subtitle p {
-  font-size: 20px;
-  font-family: 'Bree Serif';
-}
-.big p {
-  font-size: 16px;
-  font-family: 'Open Sans';
-}
-@media (max-width: 500px) {
-  .big p,
-  .big h2,
-  .big h3 {
-    text-align: center;
-  }
-}
-/*
-  Background green section with padding
-  
-    <div class="green big"><h2>Background green</h2></div>
-*/
-.green {
-  background: #9ccb87;
-}
-.green p,
-.green h2 {
-  color: white;
-}
-/*
-  Background white without padding
-  
-    <div class="white"><h2>Background white</h2></div>
-*/
-.white {
-  background: white;
-}
-.white h2 {
-  color: #3c7098;
-}
-.white .subtitle p {
-  color: #3c7098;
-}
-.white p {
-  color: #5f5f5f;
-}
-/*
-  Background blue without padding
-  
-    <div class="blue"><h2>Background blue</h2></div>
-*/
-.blue {
-  background: #3c7098;
-}
-.blue span,
-.blue p,
-.blue h2 {
-  color: white;
-}
-/*
-  Background softgrey without padding
-  
-    <div class="softgrey"><h2>Background softgrey</h2></div>
-*/
-.softgrey {
-  background: #e6eef4;
-}
-.softgrey h2 {
-  color: #3c7098;
-}
-.softgrey .subtitle p {
-  color: #3c7098;
-}
-/*
-  Header for whole page
+  Header styles
   
     <header>
-		<div class="row">
-			<div class="col-md-4">
-		    	<img src="/">
-		    </div>
-		    <div class="col-md-8">
-		    <h1>Innovation and Business Creation</h1>
-		    <nav>
-		    	<ul>
-		    		<li><a href="/">Element 1</a></li>
-		    		<li><a href="/">Element 2</a></li>
-		    		<li class="apply-menu"><a href="/">Apply now</a></li>
-		    	</ul>
-		    </nav>
-		    </div>
-		</div>
+		write your html here...
     </header>
 */
-header {
-  border-bottom: 6px solid #e3e3e3;
-  padding-top: 20px;
-  padding-bottom: 10px;
-}
-header h1 {
-  font-size: 35px;
-  font-weight: 300;
-  color: #3c7098;
-  text-align: right;
-  margin-bottom: 15px;
-  font-family: 'Open Sans', sans-serif;
-}
-header .navbar-toggle {
-  background: url('../img/toggle.png');
-}
-header ul {
-  list-style: none;
-  float: right;
-}
-header ul li {
-  display: inline;
-  padding-right: 30px;
-}
-header ul li a {
-  color: #5f5f5f;
-  font-size: 16px;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 300;
-}
-header ul li a:hover {
-  text-decoration: none;
-}
-header ul li.last {
-  padding-right: 0px;
-}
-header ul a.apply-menu {
-  padding-left: 40px;
-  padding-right: 0px;
-  color: #9ccb87;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-@media (max-width: 500px) {
-  header {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-  header h1 {
-    text-align: left;
-    margin-top: 15px;
-    font-size: 25px;
-  }
-  header ul {
-    float: none;
-  }
-  header ul li {
-    display: block;
-    margin-bottom: 10px;
-  }
-  header ul a.apply-menu {
-    padding-left: 0px;
-  }
-}
 /*
-  Footer for whole page
+  Footer styles
   
     <footer>
-    	<div class="row">
-    		<div class="col-md-6">
-				<div class=""><a href="/">info@test.com</a></div>
-					<ul>
-						<li><a href="/">Terms and conditions </a></li>
-						<li><a href="/">Copyright 2015</a></li>
-					</ul>
-			</div>
-    		<div class="col-md-6">
-				<div class=""><a title="Back to top" class="btn-back-top cd-is-visible cd-fade-out" href="/">Back to top</a></div>
-			</div>
-		</div>
-    </footerr>
+    
+    </footer>
 */
-footer {
-  padding-top: 20px;
-}
-footer ul {
-  list-style: none;
-  padding-top: 15px;
-}
-footer ul li {
-  display: inline;
-  font-family: 'Open Sans';
-  font-size: 14px;
-}
-footer ul li a {
-  font-size: 14px;
-}
-footer a {
-  color: #3c7098;
-  font-family: 'Open Sans';
-  font-size: 20px;
-}
-@media (max-width: 500px) {
-  footer {
-    padding-right: 15px;
-    padding-left: 15px;
-  }
-}
-/*
-  Apply now button
-  
-    <button class="apply-now"><a href="/">apply now</a></button>
-*/
-.apply-now {
-  padding: 6px 20px;
-  background: #9ccb87;
-  max-width: 230px;
-  margin: auto;
-  border: 0px;
-  border-radius: 22px;
-}
-.apply-now a {
-  color: white;
-  text-transform: uppercase;
-  font-size: 30px;
-  font-family: 'Bree Serif', serif;
-}
-.apply-now a:hover {
-  text-decoration: none;
-}
-/*
-  Email the team button -> originally bot section
-  
-    <button class="email-team"><a href="/">Email the team</a></button>
-*/
-.email-team {
-  padding: 8px 20px;
-  background: white;
-  border-radius: 22px;
-  border: 0px;
-  max-width: 300px;
-  margin: auto;
-}
-.email-team a {
-  color: #9ccb87;
-  text-transform: uppercase;
-  font-size: 30px;
-  font-family: 'Bree Serif';
-}
-.email-team a:hover {
-  text-decoration: none;
-}
-@media (max-width: 500px) {
-  .email-team a {
-    font-size: 20px;
-  }
-}
-/*
-  Intro section
-  
-    <div class="intro">
-    	<h2>Summer School 2015</h2>
-    	<h3>Innovation & Business</h3>
-    	<div class="date"><span>Dublin 6-10 July</span>  <span>Barcelona 27-31 July</span></div>
-    	<button class="apply-now"><a href="/">apply now</a></button>
-    </divv>
-*/
-.intro {
-  background: url('../img/bg-intro.png');
-  text-align: center;
-  height: 350px;
-  padding-top: 60px;
-}
-.intro h2 {
-  color: #3c7098;
-  font-size: 48px;
-  font-family: 'Bree Serif', serif;
-}
-.intro h3 {
-  color: #9ccb87;
-  text-transform: uppercase;
-  font-size: 30px;
-  font-family: 'Bree Serif', serif;
-  margin-top: 10px;
-}
-.date {
-  margin-bottom: 20px;
-  margin-top: 10px;
-}
-.date p,
-.date span {
-  color: #3c7098;
-  font-family: 'Bree Serif', serif;
-  font-size: 18px;
-}
-@media (max-width: 500px) {
-  .intro {
-    padding-top: 30px;
-  }
-}
-/*
-  Bot section
-  
-    <div class="bot">
-    	<h2>Apply now!</h2>
-    	<h3>Application Deadline 31 May 2015</h3>
-    	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vitae magna pulvinar, eleifend velit a, ppharetra urna. Pallenteseque finibus velit quis laoret vehicula. Quisce elefiend.</p>
-    	<button class="email-team"><a href="/">Email the team</a></button>
-    </divv>
-*/
-.bot {
-  background: url('../img/bg-bot.png');
-  text-align: center;
-  height: 450px;
-  padding: 0px 50px;
-  padding-top: 60px;
-}
-.bot p {
-  color: white;
-  font-family: 'Bree Serif', serif;
-  font-size: 20px;
-  margin-bottom: 10px;
-}
-.bot h2 {
-  font-size: 60px;
-  font-family: 'Bree Serif', serif;
-  margin-bottom: 20px;
-  color: white;
-}
-.bot h3 {
-  color: #5f5f5f;
-  font-size: 24px;
-  font-family: 'Bree Serif', serif;
-  margin-bottom: 20px;
-}
-@media (max-width: 600px) {
-  .bot {
-    height: 525px;
-    padding-top: 20px;
-  }
-  .bot p {
-    margin-bottom: 40px;
-  }
-  .bot h2 {
-    font-size: 40px;
-  }
-}
 /*
   Back to top button
   
-    <a title="Back to top" class="btn-back-top" href="/">Back to top</a>
+   <div class="btn-back-top">
+   		<a title="Back to top"" href="#init">Back to top</a>
+   </div>
 */
 .btn-back-top a {
   background: #3c7098;
@@ -6727,22 +6379,4 @@ footer a {
 .btn-back-top a:hover {
   color: white;
   text-decoration: none;
-}
-/*
-  100 hours mentor time! custom background style
-  
-    <div class="hundred"><p>100 hours mentor time!</h2></div>
-*/
-.hundred {
-  background: url('../img/bg-hundred.png') no-repeat center center;
-  height: 350px;
-  text-align: center;
-  padding-top: 95px;
-}
-.hundred p {
-  max-width: 160px;
-  margin: auto;
-  font-size: 34px;
-  font-family: 'Bree Serif';
-  color: #3c7098;
 }
