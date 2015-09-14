@@ -27,7 +27,7 @@ api = 2
 ; install profiles *should not* include a core project.
 
 ; Drupal 7.x. Requires the `core` property to be set to 7.x.
-projects[drupal][version] = 7.37
+projects[drupal][version] = 7.39
 
 ; Modules
 
@@ -89,7 +89,7 @@ projects[clean_markup][version] = 2.7
 projects[clean_markup][type] = "module"
 projects[clean_markup][subdir] = "contrib"
 
-projects[ctools][version] = 1.7
+projects[ctools][version] = 1.9
 projects[ctools][type] = "module"
 projects[ctools][subdir] = "contrib"
 
@@ -213,7 +213,7 @@ projects[flexslider][version] = 2.0-alpha3
 projects[flexslider][type] = "module"
 projects[flexslider][subdir] = "contrib"
 
-projects[jquery_update][version] = 2.5
+projects[jquery_update][version] = 2.6
 projects[jquery_update][type] = "module"
 projects[jquery_update][subdir] = "contrib"
 
@@ -271,7 +271,7 @@ projects[image_link_formatter][download][revision] = 74cfdb2
 projects[image_link_formatter][download][branch] = 7.x-1.x
 projects[image_link_formatter][subdir] = "contrib"
 
-projects[inline_entity_form][version] = 1.5
+projects[inline_entity_form][version] = 1.6
 projects[inline_entity_form][type] = "module"
 projects[inline_entity_form][subdir] = "contrib"
 
@@ -340,10 +340,8 @@ projects[media][download][branch] = 7.x-2.x
 projects[media][subdir] = "contrib"
 projects[media][patch][2146385] = "https://www.drupal.org/files/issues/media_remove_file_display_alter-2104193-91.patch"
 
-projects[media_youtube][type] = module
-projects[media_youtube][download][type] = git
-projects[media_youtube][download][revision] = 9fd6c94
-projects[media_youtube][download][branch] = 7.x-2.x
+projects[media_youtube][version] = 3.0
+projects[media_youtube][type] = "module"
 projects[media_youtube][subdir] = "contrib"
 
 projects[menu_breadcrumb][version] = 1.6
@@ -358,10 +356,8 @@ projects[module_filter][version] = 2.0
 projects[module_filter][type] = "module"
 projects[module_filter][subdir] = "contrib"
 
-projects[migrate][type] = module
-projects[migrate][download][type] = git
-projects[migrate][download][revision] = 0010411
-projects[migrate][download][branch] = 7.x-2.x
+projects[migrate][version] = 2.8
+projects[migrate][type] = "module"
 projects[migrate][subdir] = "contrib"
 
 projects[migrate_extras][version] = 2.5
@@ -390,7 +386,7 @@ projects[panels_tabs][download][revision] = 2caec50
 projects[panels_tabs][download][branch] = 7.x-2.x-dev
 projects[panels_tabs][subdir] = "contrib"
 
-projects[picture][version] = 1.5
+projects[picture][version] = 2.12
 projects[picture][type] = "module"
 projects[picture][subdir] = "contrib"
 
@@ -512,7 +508,7 @@ projects[views_bootstrap][type] = "module"
 projects[views_bootstrap][subdir] = "contrib"
 projects[views_bootstrap][patch][2203111-26] = "http://drupal.org/files/issues/views_bootstrap-thumbails-columns-per-device-size-2203111-26.patch"
 
-projects[views_bulk_operations][version] = 3.2
+projects[views_bulk_operations][version] = 3.3
 projects[views_bulk_operations][type] = "module"
 projects[views_bulk_operations][subdir] = "contrib"
 

@@ -12,7 +12,7 @@ ln -s ../../$distro_name $distro_name
 # Change dir before doing install.
 #cd docroot
 # Here you have to change user/pass to match your mysql user
-drush -y si --db-url=mysql://$bd_user:$bd_pass@$bd_server/$bd_name --locale=$installation_language --account-pass=admin $distro_name
+drush $alias_drush -y si --db-url=mysql://$bd_user:$bd_pass@$bd_server/$bd_name --locale=$installation_language --account-pass=admin $distro_name
 # login as admin after the install.
 drush fr-all -y
 if [ "$sync" == "1" ]; then
